@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<title>Bongani Mbambiso</title>
+		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="mediaqueries.css"/>
+	</head>
+
+
+	<body>
+
+		<nav id="desktop-nav">
+			<div class="logo">Bongani Mbambiso</div>
+			<div>
+				<ul class="nav-links">
+					<li><a href="#about">About</a></li>
+					<li><a href="#experience">Experience</a></li>
+					<li><a href="#projects_excel">Projects</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			<div>
+		</nav>
+
+
+		<nav id="hamburger-nav">
+			<div class="logo">Bongani Mbambiso</div>
+			<div class="hamburger-menu">
+				<div class="hamburger-icon" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class ="menu-links">
+					<li><a href="#about" onclick="toggleMenu()">About</a></li>
+					<li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+					<li><a href="#projects_excel" onclick="toggleMenu()">Projects</a></li>
+					<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+				</div>
+			</div>
+		</nav>
+
+
+		<section id="profile">
+
+			 <div class="section__pic-container">
+				<img src="./images/ME-1.jpg" alt="Bongani Mbambiso profile picture" class="about-pic"  />
+			 </div>
+
+			 <div class="section__text">
+				<p class="section__text__p1">Hello, I'm</p>
+				<h1 class="title"> Bongani Mbambiso</h1> 
+				<p class="section__text__p2"> Senior Fund Manager, and<br/>Data Analyst</p>
+				<div class="btn-container">
+					<button class="btn btn-color-2" onclick="window.open('./assets/CV.pdf')"> Download CV </button>
+						<div class="btn-container"> 
+							<button class="btn btn-color-1" onclick="location.href='./#contact'"> Contact Info </button>
+						</div>
+			 	</div>
+			 </div>
+
+		</section>
+
+
+		<section id="about">
+
+			<p class="section__text__p1">Get To Know More</p>
+			<h1 class="title">About Me</h1>	
+		
+			   <div class="about-details-container">
+
+					<div class="about-containers">
+
+						<div class="details-container">
+							<img src="./images/experience.png" alt="Experience icon"  class="icon"/>
+                            <h3>Experience<br /><br /></h3><p> * Investstment Managment <br /><br />* Data Analytics</p>
+						</div>
+
+						<div class="details-container">
+							<img src="./images/education.jpg" alt="Education icon" class="icon"/>
+ 	                        <h3>Education<br /><br /></h3><p>* M.Sc. in Mathematics of Finance<br /><br />* B.Sc. in Elecctrical Engineering</p>
+                        </div>
+
+						<div class="details-container">
+							<img src="./images/FSCA_icon.png" alt="FSCA icon" class="icon"/>
+ 	                        <h3>Regulation Exams<br /><br /></h3>
+							<p>* FAIS RE1, Issued May '17, Credential ID 227564<br /><br />
+							   * FAIS RE3, Issued May '17, Credential ID 227606<br /><br />
+							   * FAIS RE5, Issued May '14, Credential ID 144058</p>
+                        </div>
+
+						<div class="details-container">
+							<img src="./images/certification_icon.png" alt="FSCA icon" class="icon"/>
+ 	                        <h3>Certification<br /><br /></h3>
+							<p> See List Below <br />
+                        </div>
+
+					</div>
+
+				</div>
+
+				<div class="text-contanier">
+					<p> More than a decade and a half of experience in the financial services, involved in complex data identifying, analysis, visualization, and 
+						interpreting. Highly proficient in effective financial or technical report writing, presentation, and verbal communication. Significantly 
+						skilled in market research and investment analysis (financial statements, credit analysis, ESG analysis skills). 
+						Model Building, Portfolio Managment and Risk Management. Deal sourcing / origination, negotiation, structuring, and 
+						conducting due diligence. Vast knowledge of the global and local financial markets, regulations (GAAP, IFRS, FAIS, etc.), global commodity markets, 
+						including a wide variety of key economic industries and sectors (Mining, Chemicals, Oil & Gas, Paper & Packaging, industrial sectors).
+					</p>    
+				</div> 
+
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" 
+				 onclick="location.href='./#certification'"
+            />
+
+		</section>
+
+
+		<section id="certification">
+
+			<p class="section__text__p1">Click The Links For My</p>
+			<h1 class="title">Certification</h1>	
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container">
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-3922DA06F7/')">
+								<h3>Data Literacy</h3> </a><p>365 Data Science</p>
+						</div>	
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-6B86086DA5/')">
+								<h3>Data Strategy</h3> </a><p>365 Data Science</p>
+						</div>	
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-35BC63267F/')">
+								<h3>Data Cleaning and Preprocessing with pandas</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-1D56DB9546/')">
+								<h3>Data Preprocessing with NumPy</h3> </a><p>365 Data Science</p>
+						</div>				
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-019A739B84/')">
+								<h3>Deep Learning with TensorFlow 2</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-5306D2C1FA/')">
+								<h3>Introduction to Jupyter</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-3798781138/')">
+								<h3>Introduction to Business Analytics</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-A316FA4F07/')">
+								<h3>Introduction to Data & Data Science</h3> </a><p>365 Data Science</p>
+						</div>
+					</div>
+
+					<div class="details-container">
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-5662C73BFC/')">
+								<h3>Introduction to SQL</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-E21970F59D/')">
+								<h3>Introduction to Tableau</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-F65907B2A2/')">
+								<h3>SQL + Tableau</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-5ED0CF5A14/')">
+								<h3>Introduction to Python</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-7331FD3798/')">
+								<h3>Introduction to R Programming</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-5617EFDAEB/')">
+								<h3>The Complete Data Visualization Course with Python, R, Tableau, & Excel</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-6DCE7EA961/')">
+								<h3>Machine Learning in Python</h3> </a><p>365 Data Science</p>
+						</div>
+						<div class="contact-info-container">
+							<img src="./images/certificate_icon.jpg" alt="certification icon" class="icon certification-icon certificate_icon">
+							<a onclick="window.open('https://learn.365datascience.com/certificates/CC-1CA59BB74F/')">
+								<h3>Python Programmer Bootcamp</h3> </a><p>365 Data Science</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'"/>
+
+		</section>
+
+
+		<section id="experience">
+			<p class="section__text__p1">Explore My</p>
+			<h1 class="title">Experience</h1>
+
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container">
+						<h2 class="experience-sub-title">Investment Management</h2>
+						<div class="article-container"></div>
+
+						<article> 
+							<img src="./images/portfolio_management.jpg" alt="Experience icon" class="icon" >
+							<div>
+								<h3>Portfolio Management:  
+									Listed & Unlisted Investments</h3>
+								<p>Experienced <br><br></p>
+							</div>
+						</article>
+						
+						<article>
+							<img src="./images/investment_analysis.jpg" alt="Experience icon" class="icon"
+							>
+							<div>
+								<h3>Equity & Fixed Income Investment Analysis</h3>
+								<p>Experienced <br><br></p>
+							</div>
+						</article>
+
+						<article>
+							<img
+								src="./images/financial_models.png" alt="Experience icon" class="icon"
+							>
+							<div>
+								<h3>Building Valuation or Financial Models</h3>
+								<p>Experienced</p>
+							</div>
+						</article>
+
+					</div>
+
+					<div class="details-container">
+
+						<h2 class="experience-sub-title">Data Analysis & Manipulation</h2>
+						<div class="article-container"></div>
+
+						<article>
+							<img src="./images/SQL.jpg" alt="Experience icon" class="icon">
+							<div>
+								<h3>SQL: SQL Server, PostgreSQL, SQLite, & MySQL</h3>
+								<p>Experienced <br><br></p>
+							</div>
+						</article>
+						
+						<article>
+							<img src="./images/programming.jpg" alt="Experience icon" class="icon" >
+							<div>
+								<h3>Programming:  
+									Python, VBA, Mathlab, & C++</h3>
+								<p>Experienced <br><br></p>
+							</div>
+						</article>
+
+						<article>
+							<img
+								src="./images/business_intelligence.jpg" alt="Experience icon" class="icon">
+							<div>
+								<h3>Business Analysis:  
+									Power BI, Tableau, & Excel</h3>
+								<p>Experienced </p>
+							</div>
+						</article>
+					
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects_excel'"
+			/>
+
+		</section>
+
+
+		<section id="projects_excel">
+
+			<p class="section__text__p1">Browse My Recent</p>
+			<h1 class="title">Data Visualization Projects Using Excel</h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/excel_dashboard1.png" alt="excel project-1" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/CRM_Application')">
+								CRM Application Using Excel
+							</a>
+						</h2>				
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/excel_dashboard1.png" alt="excel project-2" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							Excel Project-2: ......................
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/excel_dashboard1.png" alt="excel project-3" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							Excel Project-3: ...................... 
+						</h2>
+					</div>
+
+				</div>
+			
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects_sql'" />
+
+		</section>
+
+
+		<section id="projects_sql">
+
+			<h1 class="title">Data Exploration Projects Using SQL</h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/sqlDataExploration.jpg" alt="sql project-1" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/SQL_Data_Cleaning')">
+								Housing Market Data Exploration
+							</a>							 
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/sqlDataExploration.jpg" alt="sql project-2" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/WalmartSalesDataAnalysis')">
+								Walmart Sales Data Analysis
+							</a>
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/sqlDataExploration.jpg" alt="sql project-3" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/LEGO_Data_Analysis_with_SQL_')" >
+								LEGO Data Analysis (with Q & A)
+							</a>
+						</h2>
+					</div>
+
+				</div>
+			
+			</div>
+
+			</div>
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow"  onclick="location.href='./#projects_data_visualization'" />
+
+		</section>
+
+
+		<section id="projects_data_visualization">
+
+			<h1 class="title">Data Visualization Projects Using Python, Power BI, or Tableau</h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/PowerBIDashboard.jpg" alt="Python Interactive Dashboard" class="project-img" >
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Python-Interactive-Dashboard-')" >
+								An Interactive Dashboard Using Python
+							</a>
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/PowerBIDashboard.jpg" alt="BI project" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							.................................... Power BI Project 
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/PowerBIDashboard.jpg" alt="BI project-3" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							.................................... Tableau Project 
+						</h2>
+					</div>
+
+				</div>
+			
+			</div>
+
+			</div>
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow"  onclick="location.href='./#projects_python'" />
+
+		</section>
+
+
+		<section id="projects_python">
+
+			<h1 class="title"> Web Data Scrapping Projects Using Python</h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/CodingPortfolio1.jpeg" alt="python project-EPL-Stats-Web-Scrapping" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Football_Match_Winner_Prediction')" >
+								Web Scraping EPL Football Matches With Python
+							</a>
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/CodingPortfolio1.jpeg" alt="python project-NBA-Stats-Web-Scrapping" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Predict_NBA_Games')" >
+								Web Scraping NBA Baskeball Stats With Python
+							</a>
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/CodingPortfolio1.jpeg" alt="python Search_engine_project" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Search_Engine-_Built-_With-_Python')" >
+								Build A Filtering Search Engine With Python 
+							</a>
+						</h2>
+					</div>
+
+				</div>
+			
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects_data_sci_machine_learning'" />
+
+		</section>
+
+
+		<section id="projects_data_sci_machine_learning">
+
+			<h1 class="title">Data Science & Machine Learning Projects Using Python </h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/stock_market_ML_prediction.jpg" alt="project-SP500-prediction" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/SP500_Stock_Market_Prediction')" >
+								S&P 500 Stock Market Prediction
+							</a>							
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/gold_price.jpg" alt="project-football-match-prediction" class="project-img" >
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Gold_Price_Prediction')" >
+								Gold Price Prediction 
+							</a>
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/BitCoin_Price_Prediction.jpg" alt="project-bitcoin-prediction" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Predict_Bitcoin_Price')" >
+								Bitcoin Price Prediction
+							</a>
+						</h2>
+					</div>
+
+				</div>
+			
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects_other'" />
+
+		</section>
+
+
+		<section id="projects_other">
+
+			<p class="section__text__p1">Browse My Recent</p>
+			<h1 class="title">Projects:    Other Projects</h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/FaceRecgonition.jpg" alt="project-image-classification" class="project-img" >
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/FaceRecognition')" >
+								Face Recognition (Image Classification)
+							</a>							
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/RealEstate.jpg" alt="project-realestate-market" class="project-img" >
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Predicting_House_Prices')" >
+								House Prices Prediction
+							</a>
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/market_segmentation.png" alt="project-12" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Customer_or_Market_Segmentation')" >
+								Market Segmentation (Unsupervised Learning)
+							</a>							
+						</h2>
+					</div>
+
+				</div>
+			
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+
+		</section>
+
+		<section id="credit_risk_projects">
+
+			<p class="section__text__p1">Browse My Recent</p>
+			<h1 class="title">Credit Risk Models</h1>
+		
+			<div class="experience-details-container">
+
+				<div class="about-containers">
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/credit_report.jpg" alt="project-12" class="project-img">
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Bank-Client-EDA-Credit-Analysis')" >
+								Analysing Credit Data </a>							
+						</h2>
+					</div>
+					
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/loan_application.jpg" alt="project-image-classification" class="project-img" >
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Loan_Approval_Prediction')" >
+								Loan Approval Prediction
+							</a>							
+						</h2>
+					</div>
+
+					<div class="details-container color-container">
+						<div class="article-container">
+							<img src="./images/loan_status.jfif" alt="project-realestate-market" class="project-img" >
+						</div>
+						<h2 class="experience-sub-title project-title">
+							<a onclick="window.open('https://github.com/Dibongaz/Loan-Status-Prediction-Using-ML')" >
+								Loan Status Prediction
+							</a>
+						</h2>
+					</div>
+
+
+
+				</div>
+			
+			</div>
+
+			<img src="./images/DoubelDownArrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
+
+		</section>
+
+
+		<section id="contact">
+			<p class="section__text__p1">Get In Touch</p>
+			<h1 class="title">Contact Me</h1>
+
+			<div class="contact-info-upper-container">
+
+				<div class="contact-info-container">
+					<img src="./images/email.jpg" alt="Email icon" class="icon contact-icon email-icon">
+					<p><a href="mailto:mbambisob@gmail.com">mbambisob@gmail.com</a></p>
+
+				</div>
+
+		</section>
+		
+
+		<footer>
+
+			<nav>
+				<div class="nav-links-container">
+					<ul class="nav-links">
+						<li><a href="#about">About</a></li>
+						<li><a href="#experience">Experience</a></li>
+						<li><a href="#projects">Projects</a></li>
+						<li><a href="#contact">Contact</a></li>
+				    </ul>
+				</div>
+			</nav>
+
+			<p>Copyright &#169; 2024 Bongani Mbambiso. All Rights Reserved.</p>
+
+		</footer>
+
+		<script src="script.js"></script>
+	</body>
+
+	</html>

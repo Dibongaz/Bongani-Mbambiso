@@ -232,7 +232,7 @@ ul li a:hover {
       margin: 0;
       padding: 0;
     }
-    
+
     .section__pic-container {
       margin-bottom: 0; /* remove bottom margin if any */
     }
@@ -249,12 +249,23 @@ ul li a:hover {
 
 
 #profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem; /* you can make this smaller if needed */
-    flex-wrap: wrap; /* so it still looks good on mobile */
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem; /* <-- controls space between image and text */
+  padding: 2rem 1rem;
+}
+
+.section__pic-container img {
+  width: 200px;
+  border-radius: 50%; /* optional: round the image */
+}
+
+.section__text {
+  margin-top: 1rem; /* optional, adjust if needed */
+}
+
   
   .section__pic-container img {
     width: 200px; /* control size */

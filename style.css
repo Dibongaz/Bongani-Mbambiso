@@ -42,6 +42,18 @@
     .section__pic-container img {
       width: 150px; /* optional: smaller image on mobile */
     }
+
+    .section__pic-container img {
+        margin: 0;
+      }
+      
+      .section__text h3, 
+      .section__text h2, 
+      .section__text p {
+        margin-top: 0;
+        margin-bottom: 10px; /* or 12px */
+      }
+      
   
     .section__text {
       text-align: center;

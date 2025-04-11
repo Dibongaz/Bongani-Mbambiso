@@ -248,14 +248,13 @@ ul li a:hover {
 
 
 
-#profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 1rem; /* <-- controls space between image and text */
-  padding: 2rem 1rem;
-}
+  #profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
 
 .section__pic-container img {
   width: 200px;
@@ -263,7 +262,7 @@ ul li a:hover {
 }
 
 .section__text {
-  margin-top: 1rem; /* optional, adjust if needed */
+  margin-top: 0rem; /* optional, adjust if needed */
 }
 
   
@@ -274,6 +273,9 @@ ul li a:hover {
     border-radius: 50%; /* make it perfectly circular */
   }
 
+  .section__pic-container {
+  margin-bottom: 1rem; /* Add space only after the picture */
+}
 
   section {
     position: relative; /* important! */

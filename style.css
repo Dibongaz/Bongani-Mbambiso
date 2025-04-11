@@ -219,14 +219,24 @@ ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .experience-wrapper {
-        flex-direction: column;
+    .section {
+      flex-direction: column;
+      gap: 12px; /* tighter gap for mobile */
+      padding: 20px;
     }
-
-    .experience-card {
-        flex: 1 1 100%;
+  
+    .section__pic-container {
+      margin-bottom: 0; /* remove bottom margin if any */
     }
-}
+  
+    .section__text {
+      margin-top: 0; /* remove top margin if any */
+    }
+  
+    .about-pic {
+      margin-bottom: 10px; /* small space below the image */
+    }
+  }
 
 
 

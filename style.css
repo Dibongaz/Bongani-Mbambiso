@@ -44,7 +44,15 @@
     color: darkblue; /* 👈 darker blue on hover */
   }
   
+  nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
   
+  nav ul li {
+    padding: 12px 40px; /* Add space inside each menu item */
+  }  
 
 /* General Layout */
 body {

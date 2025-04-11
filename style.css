@@ -27,7 +27,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px; /* good for desktop */
+    gap: 20px; /* good for desktop */
     padding: 40px;
   }
   
@@ -35,7 +35,7 @@
   @media (max-width: 768px) {
     .section {
       flex-direction: column;
-      gap: 16px; /* smaller gap on mobile */
+      gap: 10px; /* smaller gap on mobile */
       padding: 20px;
     }
     

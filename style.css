@@ -1,262 +1,344 @@
-#desktop-nav {
-    display: flex;
-  }
-  
-  #hamburger-nav {
-    display: none;
-  }
-  
+<!DOCTYPE html>
 
-  /* When the screen is SMALL (mobile phones), hide desktop and show hamburger */
-  @media screen and (max-width: 768px) {
-    #desktop-nav {
-      display: none;
-    }
-    #hamburger-nav {
-      display: flex;
-    }
-  }
+<html lang="en">
 
-  @media (max-width: 768px) {
-    .nav-links li a {
-      font-size: 14px;
-    }
-  }
-  
-  
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Bongani Mbambiso">
+	<meta name="description"
+		content="This page contains details about my qualifications, certifiacations, experience, and projects">
+	<title>Bongani Mbambiso's Web Page</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="mediaqueries.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: royalblue; /* 👈 blue color */
-    font-weight: bold;
-  }
-  
-  .nav-links li a:hover {
-    color: darkblue; /* 👈 darker blue on hover */
-  }
-  
-  nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-  }
-  
-  nav ul li {
-    padding: 12px 40px; /* Add space inside each menu item */
-  }  
+<body id="top">
+	<header>
+		<nav id="desktop-nav">
+			<div class="logo"></div>
+			<ul class="nav-links">
+				<li><a href="#about">About</a></li>
+				<li><a href="#education">Qualifications</a></li>
+				<li><a href="#projects">Projects</a></li>
+				<li><a href="#experience">Experience</a></li>
+				<li><a href="#contact">Contact Me</a></li>
+			</ul>
+		</nav>
 
-/* General Layout */
-body {
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-}
+		<nav id="hamburger-nav">
+			<div class="logo"></div>
+			<div class="hamburger-menu">
+				<div class="hamburger-icon" onclick="toggleMenu()">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				<div class="menu-links">
+					<ul>
+						<li><a href="#about" onclick="toggleMenu()">About</a></li>
+						<li><a href="#education" onclick="toggleMenu()">Qualifications</a></li>
+						<li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+						<li><a href="#experienc" onclick="toggleMenu()">Experience</a></li>
+						<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
-.about-pic {
-    width: 200px; /* or any size you prefer */
-    height: auto; /* keeps aspect ratio */
-    border-radius: 50%; /* makes it circular if you want */
-    object-fit: cover; /* makes it nice even if the image is not square */
-  }
-  
-section {
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 1200px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+	<section id="profile">
+		<div class="section__pic-container">
+			<img src="./images/ME.png" alt="Bongani Mbambiso's profile picture" class="about-pic" style="width: 200px;"
+				title="My Profile Pic">
+		</div>
 
-/* Section Titles */
-.section-title {
-    font-size: 1.8rem;
-    color: #333;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.icon {
-    width: 30px;
-    height: auto;
-}
-
-h2, .section-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-/* Section Content */
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-ul li a {
-    color: #0073e6;
-    text-decoration: none;
-}
-
-ul li a:hover {
-    text-decoration: underline;
-}
-
-.project-card, .experience-card {
-    background-color: #fafafa;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.project-card img, .project-img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-.project-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-.project-description {
-    font-size: 1rem;
-    color: #666;
-}
-
-.project-link {
-    color: #0073e6;
-    text-decoration: none;
-}
-
-.project-link:hover {
-    text-decoration: underline;
-}
-
-.experience-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.experience-card {
-    flex: 1 1 30%;
-    min-width: 280px;
-    box-sizing: border-box;
-}
-
-.experience-role {
-    font-size: 1.4rem;
-    font-weight: bold;
-}
-
-.experience-company {
-    font-size: 1.1rem;
-    color: #888;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .experience-wrapper {
-        flex-direction: column;
-    }
-
-    .experience-card {
-        flex: 1 1 100%;
-    }
-}
+		<div class="section__text">
+			<h3>Hi, I'm Bongani Mbambiso</h3>
+			<h2>AI Engineer | Data Scientist | Fund Manager | Financial Quantitative Specialist</h2>
+			<p>Passionate about building AI solutions at the intersection of data, technology, and finance.</p>
+			<!-- <div class="btn-container">
+				<button class="btn btn-color-2" onclick="window.open('./assets/CV.pdf')">Download CV</button>
+				<button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+			</div>
+			-->
+		</div>
+	</section>
 
 
+	<main>
 
-#profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem; /* you can make this smaller if needed */
-    flex-wrap: wrap; /* so it still looks good on mobile */
-  }
-  
-  .section__pic-container img {
-    width: 200px; /* control size */
-    height: 200px; /* make height same as width */
-    object-fit: cover; /* make sure it doesn't squash */
-    border-radius: 50%; /* make it perfectly circular */
-  }
+		<section id="about">
+			<h2 class="section-title">
+				<img src="images/ME.png" alt="Profile Image" class="icon" /> About Me
+			</h2>
+			<p class="section-description">
+				I am Bongani Mbambiso, an AI Engineer, Data Scientist, Fund Manager, and Financial Quantitative
+				Specialist.
+				I’m passionate about developing innovative AI solutions, specializing in the intersection of data,
+				technology, and finance.
+			</p>
 
+		</section>
 
-  section {
-    position: relative; /* important! */
-  }
-  
-  .back-to-top {
-    position: absolute;
-    bottom: 20px;
-    right: 20px; /* changed from left to right */
-  }
-  
-  .back-to-top a {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .back-to-top a:hover {
-    text-decoration: underline;
-  }
-  
-  .contact-icon {
-    width: 16px; /* smaller icon */
-    height: 16px;
-    vertical-align: middle;
-    margin-right: 8px;
-  }
-  
-  .contact-details a {
-    color: #0066cc;
-    text-decoration: none;
-    font-size: 18px;
-  }
-  
-  .contact-details a:hover {
-    text-decoration: underline;
-  }
-  
-  .back-to-top {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .back-to-top a {
-    color: blue;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-  }
-  
-  .back-to-top a:hover {
-    text-decoration: underline;
-  }
-  
+		<section id="education">
+			<h2 class="section-title">
+				<img src="images/education.jpg" alt="Education Icon" class="icon" /> Higher Education
+			</h2>
+			<ul class="education-list">
+				<li>
+					<a href="assets/MSc.pdf" target="_blank">Masters of Science in Mathematics of Finance (UCT)</a>
+				</li>
+				<li>
+					<a href="assets/BSc.pdf" target="_blank">Bachelors of Science in Electrical Engineering (UCT)</a>
+				</li>
+			</ul>
+
+			<br><br><br>
+			<div class="back-to-top">
+				<a href="#top">⬆️ Back to Top</a>
+			</div>
+
+		</section>
+
+		<section id="certifications">
+			<h2 class="section-title">
+				<img src="images/certification_icon.png" alt="Certification Icon" class="icon" /> Certifications
+			</h2>
+			<ul class="certification-list">
+				<li>
+					<a href="assets/IBM AI Engineering (9Y1WQBX385CN).pdf" target="_blank">
+						🏅 IBM AI Engineering, Coursera (Issued April 2025) – Credential ID: 9Y1WQBX385CN
+					</a>
+				</li>
+				<li>
+					<a href="assets/IBM Data Science (THQZWK9Q820U).pdf" target="_blank">
+						🏅 IBM Data Science, Coursera (Issued April 2025) – Credential ID: THQZWK9Q82OU
+					</a>
+				</li>
+				<li>
+					<a href="assets/Google Advanced Data Analytics (2LVWLRDEGDOE).pdf" target="_blank">
+						🏅 Google Advanced Data Analytics, Coursera (Issued April 2025) – Credential ID: 2LVWLRDEGDOE
+					</a>
+				</li>
+				<li>
+					<a href="assets/Google Data Analytics (OMZ2I93PTA12).pdf" target="_blank">
+						🏅 Google Data Analytics, Coursera (Issued April 2025) – Credential ID: OMZ2I93PTA12
+					</a>
+				</li>
+				<li>
+					<a href="assets/RE1.pdf" target="_blank">
+						🏅 FAIS RE1, Moonstone (Issued May 2017) – Credential ID: 227564
+					</a>
+				</li>
+				<li>
+					<a href="assets/RE1.pdf" target="_blank">
+						🏅 FAIS RE3, Moonstone (Issued May 2017) – Credential ID: 227606
+					</a>
+				</li>
+				<li>
+					<a href="assets/RE1.pdf" target="_blank">
+						🏅 FAIS RE5, Moonstone (Issued May 2014) – Credential ID: 144058
+					</a>
+				</li>
+			</ul>
+
+			<br><br><br><br>
+
+			<div class="back-to-top">
+				<a href="#top">⬆️ Back to Top</a>
+			</div>
+
+		</section>
+
+		<section id="projects">
+			<h2 class="section-title">📊 My Projects</h2>
+			<div class="projects-container">
+				<div class="project-card">
+					<img src="./images/excel-project.png" alt="Excel Project" class="project-img" />
+					<div class="project-content">
+						<h3 class="project-title">Financial Dashboard</h3>
+						<p class="project-description">
+							Developed an interactive Excel dashboard to visualize key financial metrics and trends for a
+							client.
+						</p>
+						<a href="#" class="project-link" target="_blank">View Project</a>
+					</div>
+				</div>
+				<div class="project-card">
+					<img src="./images/data-cleaning.png" alt="Data Cleaning Project" class="project-img" />
+					<div class="project-content">
+						<h3 class="project-title">Data Cleaning Automation</h3>
+						<p class="project-description">
+							Automated messy healthcare data cleaning using Power Query in Excel, saving 12 hours of
+							manual work weekly.
+						</p>
+						<a href="#" class="project-link" target="_blank">View Project</a>
+					</div>
+				</div>
+			</div>
+
+			<br><br><br><br>
+
+			<div class="back-to-top">
+				<a href="#top">⬆️ Back to Top</a>
+			</div>
+
+		</section>
+
+		<section id="experience">
+			<p class="section__text__p1">Explore My</p>
+			<h1 class="title">Experience</h1>
+
+			<div class="experience-wrapper">
+
+				<!-- Chief Investment Officer Experience -->
+				<div class="experience-card">
+					<h2>Chief Investment Officer</h2>
+					<h3>Pilanehurst Asset Managers | Sandton | Jan 2020 – Aug 2024</h3>
+					<ul>
+						<li>Developed advanced machine learning models in Python for asset return forecasting, risk
+							assessment, and portfolio optimization.</li>
+						<li>Designed and implemented automated data pipelines using SQL and Python to integrate and
+							process financial and ESG datasets.</li>
+						<li>Led AI and data science initiatives that advanced investment research and optimized asset
+							management strategies.</li>
+					</ul>
+				</div>
+
+				<!-- Portfolio Manager Experience at Umthombo Wealth -->
+				<div class="experience-card">
+					<h2>Portfolio Manager</h2>
+					<h3>Umthombo Wealth | Sandton | Apr 2017 – Aug 2019</h3>
+					<ul>
+						<li>Built predictive analytics models to assess company performance and identify potential
+							investment risks.</li>
+						<li>Developed interactive dashboards and risk monitoring tools using Python and Excel VBA to
+							provide real-time insights.</li>
+						<li>Conducted advanced statistical analyses on JSE-listed companies, leveraging data science
+							methods to inform data-driven investment decisions.</li>
+					</ul>
+				</div>
+
+				<!-- Portfolio Manager Experience at Cachalia Capital -->
+				<div class="experience-card">
+					<h2>Portfolio Manager</h2>
+					<h3>Cachalia Capital | Sandton | Jan 2015 – Feb 2017</h3>
+					<ul>
+						<li>Created machine learning models for company valuation and market trend forecasting.</li>
+						<li>Automated data collection, cleaning, and modeling workflows using Python and SQL to
+							streamline financial data management.</li>
+						<li>Applied statistical methods and machine learning to optimize portfolio rebalancing
+							strategies and asset allocation decisions.</li>
+					</ul>
+				</div>
+
+				<!-- Senior Analyst and Portfolio Manager Experience -->
+				<div class="experience-card">
+					<h2>Senior Analyst and Portfolio Manager</h2>
+					<h3>Mvunonala Asset Managers | Rosebank | Mar 2013 – Dec 2014</h3>
+					<ul>
+						<li>Employed machine learning algorithms for sector analysis and portfolio performance
+							forecasting.</li>
+						<li>Built and maintained predictive models to anticipate market movements and analyze
+							sector-specific trends.</li>
+					</ul>
+				</div>
+
+				<!-- Quantitative Analyst Experience at Public Investment Corporation -->
+				<div class="experience-card">
+					<h2>Quantitative Analyst</h2>
+					<h3>Public Investment Corporation | Pretoria | Oct 2006 – Feb 2013</h3>
+					<ul>
+						<li>Developed multifactor predictive models for equity and fixed income portfolios using VBA,
+							MATLAB, and C++.</li>
+						<li>Managed large SQL databases and designed ETL pipelines to automate the ingestion and
+							processing of financial market data.</li>
+						<li>Created machine learning algorithms for stock clustering and financial regime detection to
+							identify market patterns.</li>
+					</ul>
+				</div>
+
+				<!-- Quantitative Analyst Intern Experience at Futuregrowth Asset Management -->
+				<div class="experience-card">
+					<h2>Quantitative Analyst Intern</h2>
+					<h3>Futuregrowth Asset Management | Cape Town | Dec 2005 – Sep 2006</h3>
+					<ul>
+						<li>Built machine learning models using clustering algorithms in MATLAB for market state
+							detection.</li>
+						<li>Developed and maintained statistical modeling tools and automated research databases to
+							support data-driven market analysis.</li>
+					</ul>
+				</div>
+
+			</div>
+			<br><br><br><br>
+			<div class="back-to-top">
+				<a href="#top">⬆️ Back to Top</a>
+			</div>
+
+		</section>
+
+	</main>
+
+	<footer>
+		<section id="contact">
+			<div class="contact-details">
+				<!-- WhatsApp -->
+				<p>
+					<a href="https://wa.me/+27624297380" target="_blank">
+						<img src="images/whatsapp_icon.png" class="contact-icon" alt="WhatsApp">
+						Contact via WhatsApp
+					</a>
+				</p>
+
+				<!-- Email -->
+				<p>
+					<a href="mailto:mbambisob@gmail.com">
+						<img src="images/email.jpg" class="contact-icon" alt="Email">
+						Contact via e-mail
+					</a>
+				</p>
+
+				<!-- Phone (hidden number) -->
+				<p style="display: none;">
+					<a href="tel:+27624297380">
+						<img src="images/cellphone.jpg" class="contact-icon" alt="Phone">
+						Call Me
+					</a>
+				</p>
+
+				<!-- LinkedIn -->
+				<p>
+					<a href="https://www.linkedin.com/in/bongani-mbambiso-6738428/" target="_blank">
+						<img src="images/linkedin.jpg" class="contact-icon" alt="LinkedIn">
+						LinkedIn
+					</a>
+				</p>
+
+				<!-- GitHub -->
+				<p>
+					<a href="https://github.com/Dibongaz" target="_blank">
+						<img src="images/github.jpg" class="contact-icon" alt="GitHub">
+						GitHub
+					</a>
+				</p>
+			</div>
+			<br><br><br><br>
+			<!-- Back to Top link -->
+			<div class="back-to-top">
+				<a href="#top">⬆️ Back to Top</a>
+			</div>
+
+		</section>
+
+		<p>Copyright &#169; 2024 Bongani Mbambiso. All Rights Reserved.</p>
+
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

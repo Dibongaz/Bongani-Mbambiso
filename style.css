@@ -226,7 +226,11 @@ ul li a:hover {
   .project-card {
     flex-direction: column; /* stack image on top of text */
     align-items: center;
-    text-align: center;
+    text-align: justify;
+  }
+
+  .project-card p {
+    text-align: justify; /* <--- Make sure paragraphs inside project cards are justified */
   }
 
   .project-card img {

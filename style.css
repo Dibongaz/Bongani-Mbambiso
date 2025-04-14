@@ -165,7 +165,11 @@ ul li a:hover {
 .project-card {
   display: flex;
   align-items: center;
-  gap: 20px;
+
+  flex-direction: row; /* by default, image and text side-by-side */
+  gap: 1rem; /* spacing between image and text */
+
+  /*gap: 20px;*/
   padding: 20px;
   background: #fff;
   border-radius: 12px;

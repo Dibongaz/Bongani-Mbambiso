@@ -165,11 +165,8 @@ ul li a:hover {
 .project-card {
   display: flex;
   align-items: center;
-
-  flex-direction: row; /* by default, image and text side-by-side */
+  flex-direction: row; /* side-by-side layout */
   gap: 1rem; /* spacing between image and text */
-
-  /*gap: 20px;*/
   padding: 20px;
   background: #fff;
   border-radius: 12px;
@@ -226,42 +223,37 @@ ul li a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .section {
-      flex-direction: column;
-      gap: 8px; /* tighter gap for mobile */
-      padding: 16px;
-    }
-
-    .project-card {
-      flex-direction: column; /* stack image on top of text on mobile */
-      align-items: center;
-      text-align: center;
-    }
-
-    .project-card img {
-      width: 100%; /* make image full width */
-      height: auto; /* maintain ratio */
-    }
-    .section__pic-container img,
-    .section__text h3,
-    .section__text h2,
-    .section__text p {
-      margin: 0;
-      padding: 0;
-    }
-
-    .section__pic-container {
-      margin-bottom: 0; /* remove bottom margin if any */
-    }
-  
-    .section__text {
-      margin-top: 0; /* remove top margin if any */
-    }
-  
-    .about-pic {
-      margin-bottom: 10px; /* small space below the image */
-    }
+  .project-card {
+    flex-direction: column; /* stack image on top of text */
+    align-items: center;
+    text-align: center;
   }
+
+  .project-card img {
+    width: 100%; /* make image full width */
+    height: auto; /* maintain ratio */
+  }
+
+  .section__pic-container img,
+  .section__text h3,
+  .section__text h2,
+  .section__text p {
+    margin: 0;
+    padding: 0;
+  }
+
+  .section__pic-container {
+    margin-bottom: 0; /* remove bottom margin if any */
+  }
+
+  .section__text {
+    margin-top: 0; /* remove top margin if any */
+  }
+
+  .about-pic {
+    margin-bottom: 10px; /* small space below image */
+  }
+}
 
 
 

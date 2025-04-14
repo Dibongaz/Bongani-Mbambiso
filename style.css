@@ -231,8 +231,9 @@ ul li a:hover {
 
   .project-card p {
     text-align: justify; /* <--- Make sure paragraphs inside project cards are justified */
+    text-justify: inter-word; /* optional: better spacing between words */
   }
-
+    
   .project-card img {
     width: 100%; /* make image full width */
     height: auto; /* maintain ratio */

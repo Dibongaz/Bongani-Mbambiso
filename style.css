@@ -227,7 +227,12 @@ ul li a:hover {
       gap: 8px; /* tighter gap for mobile */
       padding: 16px;
     }
-  
+
+      @media (max-width: 768px) {
+      .project-card img {
+        min-height: 220px; /* taller images on smaller screens */
+      }
+    }
     .section__pic-container img,
     .section__text h3,
     .section__text h2,

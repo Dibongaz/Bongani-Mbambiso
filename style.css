@@ -228,10 +228,15 @@ ul li a:hover {
       padding: 16px;
     }
 
-      @media (max-width: 768px) {
-      .project-card img {
-        min-height: 220px; /* taller images on smaller screens */
-      }
+    .project-card {
+      flex-direction: column; /* stack image on top of text on mobile */
+      align-items: center;
+      text-align: center;
+    }
+
+    .project-card img {
+      width: 100%; /* make image full width */
+      height: auto; /* maintain ratio */
     }
     .section__pic-container img,
     .section__text h3,

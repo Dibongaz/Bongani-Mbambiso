@@ -232,6 +232,9 @@ ul li a:hover {
   .project-card p {
     text-align: justify; /* <--- Make sure paragraphs inside project cards are justified */
     text-justify: inter-word; /* optional: better spacing between words */
+    hyphens: auto; /* allow words to break nicely */
+    overflow-wrap: break-word; /* prevent ugly overflow */
+    word-break: break-word; /* break long words if needed */
   }
     
   .project-card img {

@@ -2050,25 +2050,23 @@
 		}
 	</style>
 
-	/*<script src="script.js"></script>*/
-
 	<script>
 		document.addEventListener("DOMContentLoaded", () => {
-  const hamburger = document.getElementById("hamburger-button");
-  const nav = document.getElementById("hamburger-nav");
+			const hamburger = document.getElementById("hamburger-button");
+			const nav = document.getElementById("hamburger-nav");
 
-  hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    document.body.classList.toggle("no-scroll");
-  });
+			hamburger.addEventListener("click", () => {
+				nav.classList.toggle("active");
+				document.body.classList.toggle("no-scroll");
+			});
 
-  document.querySelectorAll(".mobile-link").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-      document.body.classList.remove("no-scroll");
-    });
-  });
-});
+			document.querySelectorAll(".mobile-link").forEach(link => {
+				link.addEventListener("click", () => {
+					nav.classList.remove("active");
+					document.body.classList.remove("no-scroll");
+				});
+			});
+		});
 	</script>
 
 </body>

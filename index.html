@@ -12,51 +12,22 @@
 	<title>Bongani Mbambiso's Web Page</title>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="mediaqueries.css">
-</head>
-
-<body id="top">
-	<header class="header">
-		<nav id="desktop-nav" class="desktop-nav">
-			<div class="logo-container">
-				<div class="logo">BM</div>
-				<span class="logo-text">Bongani Mbambiso</span>
-			</div>
-			<ul class="nav-links">
-				<li><a href="#about" class="nav-link hover-underline"><span>About</span></a></li>
-				<li><a href="#education" class="nav-link hover-underline"><span>Higher Education</span></a></li>
-				<li><a href="#certifications" class="nav-link hover-underline"><span>Certifications</span></a></li>
-				<li><a href="#projects" class="nav-link hover-underline"><span>Projects</span></a></li>
-				<li><a href="#background" class="nav-link hover-underline"><span>Finance Background</span></a></li>
-				<li><a href="#experience" class="nav-link hover-underline"><span>Experience</span></a></li>
-				<li><a href="#contact" class="nav-link contact-link"><span>Contact</span></a></li>
-			</ul>
-		</nav>
-
-		<nav id="hamburger-nav" class="hamburger-nav">
-			<div class="logo-container">
-				<div class="logo">BM</div>
-				<span class="logo-text">Bongani Mbambiso</span>
-			</div>
-			<div class="hamburger-menu" onclick="toggleMenu()">
-				<span class="bar"></span>
-				<span class="bar"></span>
-				<span class="bar"></span>
-			</div>
-			<div class="menu-links">
-				<ul>
-					<li><a href="#about" onclick="toggleMenu()" class="mobile-link">About</a></li>
-					<li><a href="#education" onclick="toggleMenu()" class="mobile-link">Higher Education</a></li>
-					<li><a href="#certifications" onclick="toggleMenu()" class="mobile-link">Certifications</a></li>
-					<li><a href="#projects" onclick="toggleMenu()" class="mobile-link">Projects</a></li>
-					<li><a href="#background" onclick="toggleMenu()" class="mobile-link">Finance Background</a></li>
-					<li><a href="#experience" onclick="toggleMenu()" class="mobile-link">Experience</a></li>
-					<li><a href="#contact" onclick="toggleMenu()" class="mobile-link contact-link">Contact</a></li>
-				</ul>
-			</div>
-		</nav>
-	</header>
 
 	<style>
+		/* Base Styles */
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Segoe UI', Roboto, sans-serif;
+			color: #333;
+			padding-top: 80px;
+			/* Space for fixed header */
+		}
+
 		/* Header Styles */
 		.header {
 			position: fixed;
@@ -188,7 +159,7 @@
 			background-color: white;
 			box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
 			padding: 100px 30px;
-			transition: right 0.5s ease;
+			transition: right 0.3s ease;
 			z-index: 1000;
 		}
 
@@ -214,6 +185,15 @@
 			color: #4CAF50;
 		}
 
+		.mobile-link.contact-link {
+			background-color: #4CAF50;
+			color: white !important;
+			padding: 8px 20px;
+			border-radius: 30px;
+			display: inline-block;
+			border-bottom: none;
+		}
+
 		/* Active state for mobile menu */
 		.hamburger-nav.active .bar:nth-child(1) {
 			transform: translateY(9px) rotate(45deg);
@@ -231,6 +211,11 @@
 			right: 0;
 		}
 
+		/* Prevent scrolling when menu is open */
+		body.no-scroll {
+			overflow: hidden;
+		}
+
 		/* Responsive Design */
 		@media (max-width: 900px) {
 			.desktop-nav {
@@ -243,16 +228,57 @@
 		}
 	</style>
 
-	<script>
-		function toggleMenu() {
-			const hamburgerNav = document.getElementById('hamburger-nav');
-			hamburgerNav.classList.toggle('active');
-		}
-	</script>
+</head>
+
+<body id="top">
+
+	<header class="header">
+		<!-- Desktop Navigation -->
+		<nav id="desktop-nav" class="desktop-nav">
+			<div class="logo-container">
+				<div class="logo">BM</div>
+				<span class="logo-text">Bongani Mbambiso</span>
+			</div>
+			<ul class="nav-links">
+				<li><a href="#about" class="nav-link hover-underline"><span>About</span></a></li>
+				<li><a href="#education" class="nav-link hover-underline"><span>Higher Education</span></a></li>
+				<li><a href="#certifications" class="nav-link hover-underline"><span>Certifications</span></a></li>
+				<li><a href="#projects" class="nav-link hover-underline"><span>Projects</span></a></li>
+				<li><a href="#background" class="nav-link hover-underline"><span>Finance Background</span></a></li>
+				<li><a href="#experience" class="nav-link hover-underline"><span>Experience</span></a></li>
+				<li><a href="#contact" class="nav-link contact-link"><span>Contact</span></a></li>
+			</ul>
+		</nav>
+
+		<!-- Mobile Navigation -->
+		<nav id="hamburger-nav" class="hamburger-nav">
+			<div class="logo-container">
+				<div class="logo">BM</div>
+				<span class="logo-text">Bongani Mbambiso</span>
+			</div>
+			<div class="hamburger-menu" id="hamburger-button">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+			<div class="menu-links" id="mobile-menu">
+				<ul>
+					<li><a href="#about" class="mobile-link">About</a></li>
+					<li><a href="#education" class="mobile-link">Higher Education</a></li>
+					<li><a href="#certifications" class="mobile-link">Certifications</a></li>
+					<li><a href="#projects" class="mobile-link">Projects</a></li>
+					<li><a href="#background" class="mobile-link">Finance Background</a></li>
+					<li><a href="#experience" class="mobile-link">Experience</a></li>
+					<li><a href="#contact" class="mobile-link contact-link">Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
 
 
 	<section id="profile" class="profile-section">
-		<br><br><br>
+		<br><br><br><br>
 		<div class="profile-container">
 			<!-- Animated profile picture container -->
 			<div class="profile-pic-container">

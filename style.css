@@ -1,3 +1,29 @@
+/* Hide mobile menu by default */
+.menu-links {
+    display: none;
+}
+
+/* Show when 'open' class is added */
+.menu-links.open {
+    display: block;
+    /* Add your mobile menu styles here */
+}
+
+/* Hamburger icon animation */
+.hamburger-menu.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger-menu.open .bar:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+.hamburger-menu .bar {
+    transition: all 0.3s ease;
+}
+
+
 #desktop-nav {
     display: flex;
   }

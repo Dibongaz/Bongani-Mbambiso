@@ -53,7 +53,7 @@
 
 		<div class="section__text">
 			<h3>Hi, I'm Bongani Mbambiso</h3>
-			<h2>AI Engineer | Data Scientist | Fund Manager </h2>
+			<h2>AI Engineer | Data Scientist | Mergers & Acquisitions | Fund Manager </h2>
 		</div>
 	</section>
 
@@ -82,113 +82,270 @@
 			<h2 class="section-title">
 				<img src="images/education.jpg" alt="Education Icon" class="icon" /> Higher Education
 			</h2>
-			<ul class="education-list">
-				<li>
-					<a href="assets/MSc.pdf" target="_blank">Masters of Science in Mathematics of Finance (UCT)</a>
-				</li>
-				<li>
-					<a href="assets/BSc.pdf" target="_blank">Bachelors of Science in Electrical Engineering (UCT)</a>
-				</li>
-			</ul>
+
+			<!-- Accordion-style dropdown -->
+			<div class="education-accordion">
+				<!-- Master's Degree -->
+				<details class="education-item">
+					<summary class="education-summary">
+						🎓 <strong>Masters of Science in Mathematics of Finance</strong>
+						<span class="education-institution">University of Cape Town (UCT)</span>
+					</summary>
+					<div class="education-content">
+						<p>
+							Advanced studies in quantitative finance, stochastic calculus, and risk modeling.
+							<a href="assets/MSc.pdf" target="_blank" class="education-link">View Diploma</a>
+						</p>
+					</div>
+				</details>
+
+				<!-- Bachelor's Degree -->
+				<details class="education-item">
+					<summary class="education-summary">
+						🎓 <strong>Bachelors of Science in Electrical Engineering</strong>
+						<span class="education-institution">University of Cape Town (UCT)</span>
+					</summary>
+					<div class="education-content">
+						<p>
+							Focused on systems design, applied mathematics, and computational methods.
+							<a href="assets/BSc.pdf" target="_blank" class="education-link">View Diploma</a>
+						</p>
+					</div>
+				</details>
+			</div>
+
+			<style>
+				/* Accordion Styling */
+				.education-accordion {
+					max-width: 700px;
+					margin: 0 auto;
+				}
+
+				.education-item {
+					border-left: 4px solid #4CAF50;
+					background-color: #f8f9fa;
+					border-radius: 4px;
+					margin-bottom: 15px;
+					overflow: hidden;
+					transition: all 0.3s;
+					box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+				}
+
+				.education-item[open] {
+					background-color: #fff;
+					box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+				}
+
+				.education-summary {
+					padding: 16px 20px;
+					cursor: pointer;
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+					position: relative;
+					padding-right: 40px;
+				}
+
+				.education-summary:hover {
+					background-color: #f1f1f1;
+				}
+
+				.education-summary::-webkit-details-marker {
+					display: none;
+				}
+
+				.education-summary:after {
+					content: "+";
+					position: absolute;
+					right: 20px;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 20px;
+					color: #4CAF50;
+					font-weight: bold;
+				}
+
+				.education-item[open] .education-summary:after {
+					content: "-";
+				}
+
+				.education-institution {
+					font-size: 15px;
+					color: #555;
+					margin-top: 5px;
+					font-style: italic;
+				}
+
+				.education-content {
+					padding: 0 20px 20px 20px;
+					line-height: 1.6;
+				}
+
+				.education-link {
+					display: inline-block;
+					margin-top: 10px;
+					padding: 6px 12px;
+					background-color: #4CAF50;
+					color: white;
+					border-radius: 4px;
+					text-decoration: none;
+					font-size: 14px;
+					transition: background-color 0.3s;
+				}
+
+				.education-link:hover {
+					background-color: #3e8e41;
+				}
+			</style>
 
 			<br><br><br>
+
 			<div class="back-to-top">
 				<a href="#top">⬆️ Back to Top</a>
 			</div>
-
 		</section>
 
 		<section id="certifications">
 			<h2 class="section-title">
 				<img src="images/certification_icon.png" alt="Certification Icon" class="icon" /> Certifications
 			</h2>
-			<ul class="certification-list">
-				<li>
-					<a href="assets/IBM AI Engineering (9Y1WQBX385CN).pdf" target="_blank">
-						🏅 <strong>IBM AI Engineering Professional Certificate</strong>, Coursera.
-					</a>
-				</li>
-				<li>
-					<a href="assets/IBM Gen AI Engineering (XO3SKX33S1V6).pdf" target="_blank">
-						🏅 <strong>IBM Generative AI Engineering Professional Certificate</strong>, Coursera.
-					</a>
-				</li>
-				<li>
-					<a href="assets/IBM Data Engineering (3LR7DMLMCOWC).pdf" target="_blank">
-						🏅 <strong>IBM Data Engineering Professional Certificate</strong>, Coursera.</a>
-				</li>
-				<li>
-					<a href="assets/IBM Data Management (KUB2X5KVAE9Z).pdf" target="_blank">
-						🏅 <strong>IBM Data Management Professional Certificate</strong>, Coursera.</a>
-				</li>
-				<li>
-					<a href="assets/IBM Data Science (THQZWK9Q820U).pdf" target="_blank">
-						🏅 <strong>IBM Data Science Professional Certificate</strong>, Coursera.</a>
-				</li>
 
-				<li>
-					<a href="assets/Machine Learning Specialization (LORP8OLL04AO).pdf" target="_blank">
-						🏅 <strong>DeepLearning.AI and Stanford University Machine Learning Specialization</strong>,
-						Coursera
-					</a>
-				</li>
+			<div class="certification-dropdown">
+				<select onchange="if(this.value) window.open(this.value, '_blank'); this.selectedIndex = 0;"
+					class="certification-select">
+					<option value="">-- Select a certification to view --</option>
 
-				<li>
-					<a href="assets/Deep Learning Specialization (4OHQ56L4FG98).pdf" target="_blank">
-						🏅 <strong>DeepLearning.AI Deep Learning Specialization</strong>, Coursera
-					</a>
-				</li>
+					<!-- IBM Certifications Group -->
+					<optgroup label="🏢 IBM Certifications">
+						<option value="assets/IBM AI Engineering (9Y1WQBX385CN).pdf">🏅 AI Engineering Professional
+							Certificate</option>
+						<option value="assets/IBM Gen AI Engineering (XO3SKX33S1V6).pdf">🏅 Generative AI Engineering
+							Professional Certificate</option>
+						<option value="assets/IBM Data Engineering (3LR7DMLMCOWC).pdf">🏅 Data Engineering Professional
+							Certificate</option>
+						<option value="assets/IBM Data Management (KUB2X5KVAE9Z).pdf">🏅 Data Management Professional
+							Certificate</option>
+						<option value="assets/IBM Data Science (THQZWK9Q820U).pdf">🏅 Data Science Professional
+							Certificate</option>
+					</optgroup>
 
-				<li>
-					<a href="assets/Google Advanced Data Analytics (2LVWLRDEGDOE).pdf" target="_blank">
-						🏅 <strong>Google Advanced Data Analytics</strong>, Coursera.
-					</a>
-				</li>
+					<!-- DeepLearning.AI Certifications Group -->
+					<optgroup label="🧠 DeepLearning.AI Certifications">
+						<option value="assets/Machine Learning Specialization (LORP8OLL04AO).pdf">🏅 Machine Learning
+							Specialization (with Stanford)</option>
+						<option value="assets/Deep Learning Specialization (4OHQ56L4FG98).pdf">🏅 Deep Learning
+							Specialization</option>
+					</optgroup>
 
-				<li>
-					<a href="assets/Google Data Analytics (OMZ2I93PTA12).pdf" target="_blank">
-						🏅 <strong>Google Data Analytics</strong>, Coursera.
-					</a>
-				</li>
+					<!-- Google Certifications Group -->
+					<optgroup label="🔍 Google Certifications">
+						<option value="assets/Google Advanced Data Analytics (2LVWLRDEGDOE).pdf">🏅 Advanced Data
+							Analytics</option>
+						<option value="assets/Google Data Analytics (OMZ2I93PTA12).pdf">🏅 Data Analytics</option>
+					</optgroup>
 
-				<li>
-					<a href="assets/Mergers & Acquisitions Specialization (5EGYGEEEQBYB).pdf" target="_blank">
-						🏅 <strong>Mergers & Acquisitions Specialization</strong>, Coursera.
-					</a>
-				</li>
+					<!-- Other Certifications Group -->
+					<optgroup label="📚 Other Certifications">
+						<option value="assets/Mergers & Acquisitions Specialization (5EGYGEEEQBYB).pdf">🏅 Mergers &
+							Acquisitions Specialization</option>
+						<option value="assets/Real Estate Property Management (E41UAOFVN4NJ).pdf">🏅 Real Estate
+							Property Management</option>
+					</optgroup>
+				</select>
+			</div>
 
-				<li>
-					<a href="assets/Real Estate Property Management (E41UAOFVN4NJ).pdf" target="_blank">
-						🏅 <strong>Real Estate Property Management</strong>, Coursera.
-					</a>
-				</li>
+			<style>
+				.certification-select {
+					padding: 12px 20px;
+					font-size: 16px;
+					border: 2px solid #4CAF50;
+					border-radius: 8px;
+					background-color: #f8f9fa;
+					width: 100%;
+					max-width: 650px;
+					cursor: pointer;
+					transition: all 0.3s;
+					margin: 15px 0;
+				}
 
-			</ul>
+				.certification-select:hover {
+					border-color: #3e8e41;
+					background-color: #fff;
+					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+				}
+
+				.certification-select:focus {
+					outline: none;
+					border-color: #2e7d32;
+					box-shadow: 0 0 10px rgba(46, 125, 50, 0.3);
+				}
+
+				optgroup {
+					font-weight: bold;
+					font-style: normal;
+					color: #333;
+					padding: 5px 0;
+				}
+
+				optgroup option {
+					font-weight: normal;
+					padding: 8px 15px;
+					border-bottom: 1px solid #eee;
+				}
+
+				optgroup option:hover {
+					background-color: #e8f5e9;
+				}
+			</style>
 
 			<br><br><br><br>
 
 			<div class="back-to-top">
 				<a href="#top">⬆️ Back to Top</a>
 			</div>
-
 		</section>
 
-		<section id="projects">
+		<style>
+			.certification-select {
+				padding: 10px 15px;
+				font-size: 16px;
+				border: 2px solid #ddd;
+				border-radius: 5px;
+				background-color: #f9f9f9;
+				width: 100%;
+				max-width: 600px;
+				cursor: pointer;
+				transition: all 0.3s;
+			}
 
+			.certification-select:hover {
+				border-color: #aaa;
+				background-color: #fff;
+			}
+
+			.certification-select:focus {
+				outline: none;
+				border-color: #4CAF50;
+				box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+			}
+		</style>
+
+		<section id="projects">
 			<h2 class="section-title">💻 My Projects 📂</h2>
 
-			<div class="projects-container">
-
-				<div class="project-card">
-					<img src="./images/stock_market_ML_prediction.jpg" alt="Stock Market Prediction"
-						class="project-img" />
+			<div class="projects-accordion">
+				<!-- Project 1: Stock Market Prediction -->
+				<details class="project-item">
+					<summary class="project-summary">
+						📈 <strong>Stock Market Prediction</strong> (Python, Scikit-learn, Random Forest)
+					</summary>
 					<div class="project-content">
-						<h3 class="project-title">Stock Market Prediction</h3>
+						<img src="./images/stock_market_ML_prediction.jpg" alt="Stock Market Prediction"
+							class="project-img" />
 						<p class="project-description">
 							Developed a machine learning model to predict the S&P 500 index trends using a
 							<i>Random Forest Classifier</i> from the <i>Scikit-learn</i> library.
 						</p>
-
 						<p class="tech-stack">
 							<strong>Tech Stack:</strong> Python, Pandas, Scikit-learn, Random Forest Classifier, Machine
 							Learning
@@ -198,22 +355,22 @@
 							View Project
 						</a>
 					</div>
-				</div>
+				</details>
 
-				<div class="project-card">
-					<img src="./images/BitCoin_Price_Prediction.jpg" alt="Predicting Bitcoin Prices"
-						class="project-img" />
+				<!-- Project 2: Bitcoin Price Prediction -->
+				<details class="project-item">
+					<summary class="project-summary">
+						₿ <strong>Predicting Bitcoin Prices</strong> (Python, XGBoost, Web Scraping)
+					</summary>
 					<div class="project-content">
-						<h3 class="project-title">Predicting Bitcoin Prices</h3>
+						<img src="./images/BitCoin_Price_Prediction.jpg" alt="Predicting Bitcoin Prices"
+							class="project-img" />
 						<p class="project-description">
 							Developed a machine learning model to predict Bitcoin price movements using historical
-							pricing data and Wikipedia edit data.
-							Cleaned and merged datasets with <strong>Pandas</strong>, and trained initial models with
-							<strong>Random Forest</strong> classifiers.
-							Improved model performance by switching to <strong>XGBoost</strong> and engineering better
-							predictors.
-							Built a backtesting system and implemented robust error metrics to validate algorithm
-							performance.
+							pricing data and Wikipedia edit data. Cleaned and merged datasets with
+							<strong>Pandas</strong>,
+							and trained initial models with <strong>Random Forest</strong> classifiers. Improved model
+							performance by switching to <strong>XGBoost</strong> and engineering better predictors.
 						</p>
 						<p class="tech-stack">
 							<strong>Tech Stack:</strong> Python, Pandas, Scikit-learn, XGBoost
@@ -223,132 +380,221 @@
 							View Project
 						</a>
 					</div>
-				</div>
+				</details>
+
+				<!-- Project 3: Market Segmentation -->
+				<details class="project-item">
+					<summary class="project-summary">
+						🎯 <strong>Market Segmentation</strong> (Python, Streamlit, Clustering)
+					</summary>
+					<div class="project-content">
+						<img src="./images/market_segmentation.png" alt="Customer or Market Segmentation"
+							class="project-img" />
+						<p class="project-description">
+							Built a customer segmentation model to support personalized recommendations such as saving
+							plans, loans, and wealth management services. Applied five clustering algorithms:
+							<strong>K-Means</strong>, <strong>Agglomerative Clustering</strong>, <strong>Spectral
+								Clustering</strong>,
+							<strong>DBSCAN</strong>, and <strong>Gaussian Mixture Models</strong>.
+						</p>
+						<p class="tech-stack">
+							<strong>Tech Stack:</strong> Python, Scikit-learn, Streamlit, Pandas, Matplotlib
+						</p>
+						<a href="https://github.com/Dibongaz/Customer_or_Market_Segmentation" class="project-link"
+							target="_blank">
+							View Project
+						</a>
+					</div>
+				</details>
+
+				<!-- Project 4: House Price Prediction -->
+				<details class="project-item">
+					<summary class="project-summary">
+						🏠 <strong>Predicting House Prices</strong> (Python, Random Forest, Data Processing)
+					</summary>
+					<div class="project-content">
+						<img src="./images/RealEstate.jpg" alt="Predicting House Prices" class="project-img" />
+						<p class="project-description">
+							Built a machine learning model to predict future house prices using data from the Federal
+							Reserve. Combined and processed the datasets, trained a <i>Random Forest model</i>, and
+							evaluated performance through backtesting. Enhanced the model by adding new predictive
+							features.
+						</p>
+						<p class="tech-stack">
+							<strong>Tech Stack:</strong> Python, Pandas, Scikit-learn, Random Forest, Machine Learning,
+							Data Processing
+						</p>
+						<a href="https://github.com/Dibongaz/Predicting_House_Prices/tree/main" class="project-link"
+							target="_blank">
+							View Project
+						</a>
+					</div>
+				</details>
+
+				<!-- Project 5: Walmart Sales Analysis -->
+				<details class="project-item">
+					<summary class="project-summary">
+						🛒 <strong>Walmart Sales Data Analysis</strong> (SQL, Pandas, Data Visualization)
+					</summary>
+					<div class="project-content">
+						<img src="./images/sqlDataExploration.jpg" alt="Walmart Sales Data Analysis"
+							class="project-img" />
+						<p class="project-description">
+							Performed a comprehensive SQL data analysis on Walmart sales data to uncover key insights.
+							Identified trends and factors influencing sales across different branches to support
+							business decisions.
+						</p>
+						<p class="tech-stack">
+							<strong>Tech Stack:</strong> SQL, Pandas, Data Analysis, Data Visualization
+						</p>
+						<a href="https://github.com/Dibongaz/WalmartSalesDataAnalysis/tree/main" class="project-link"
+							target="_blank">
+							View Project
+						</a>
+					</div>
+				</details>
+
+				<!-- Project 6: Football Match Prediction -->
+				<details class="project-item">
+					<summary class="project-summary">
+						⚽ <strong>EPL Football Match Winner Prediction</strong> (Python, Web Scraping, Scikit-learn)
+					</summary>
+					<div class="project-content">
+						<img src="./images/FootballMatch.jpg" alt="Football Match Winner Prediction"
+							class="project-img" />
+						<p class="project-description">
+							Developed a machine learning model to predict match winners in the English Premier League
+							(EPL). Collected data using <strong>Requests</strong>, <strong>BeautifulSoup</strong>, and
+							<strong>Pandas</strong>, cleaned and prepared the dataset, and trained a classification
+							model with
+							<strong>Scikit-learn</strong>. Evaluated prediction accuracy and iteratively improved model
+							performance.
+						</p>
+						<p class="tech-stack">
+							<strong>Tech Stack:</strong> Python, Requests, BeautifulSoup, Pandas, Scikit-learn
+						</p>
+						<a href="https://github.com/Dibongaz/Football_Match_Winner_Prediction" class="project-link"
+							target="_blank">
+							View Project
+						</a>
+					</div>
+				</details>
+
+				<!-- Project 7: NBA Match Prediction -->
+				<details class="project-item">
+					<summary class="project-summary">
+						🏀 <strong>NBA Basketball Match Winner Prediction</strong> (Python, BeautifulSoup, Pandas)
+					</summary>
+					<div class="project-content">
+						<img src="./images/NBA.png" alt="Basketball Match Winner Prediction" class="project-img" />
+						<p class="project-description">
+							Built a machine learning model to predict NBA basketball match winners.
+							Scraped standings and box score data using <strong>BeautifulSoup</strong> and
+							<strong>Pandas</strong>, cleaned and parsed the data into structured DataFrames, and
+							performed
+							feature selection to identify key predictors. Trained and evaluated a classification model
+							with <strong>Scikit-learn</strong>, incorporating rolling predictors to enhance model
+							performance.
+						</p>
+						<p class="tech-stack">
+							<strong>Tech Stack:</strong> Python, BeautifulSoup, Pandas, Scikit-learn
+						</p>
+						<a href="https://github.com/Dibongaz/Predict_NBA_Games" class="project-link" target="_blank">
+							View Project
+						</a>
+					</div>
+				</details>
 			</div>
 
-			<div class="project-card">
-				<img src="./images/market_segmentation.png" alt="Customer or Market Segmentation" class="project-img" />
-				<div class="project-content">
-					<h3 class="project-title">Market Segmentation</h3>
-					<p class="project-description">
-						Built a customer segmentation model to support personalized recommendations such as saving
-						plans, loans, and wealth management services.
-						Applied five clustering algorithms: <strong>K-Means</strong>, <strong>Agglomerative
-							Clustering</strong>, <strong>Spectral Clustering</strong>, <strong>DBSCAN</strong>, and
-						<strong>Gaussian Mixture Models</strong>.
-						Developed a <strong>Streamlit</strong> application to collect customer details and predict
-						their cluster assignment in real-time.
-					</p>
-					<p class="tech-stack">
-						<strong>Tech Stack:</strong> Python, Scikit-learn, Streamlit, Pandas, Matplotlib
-					</p>
-					<a href="https://github.com/Dibongaz/Customer_or_Market_Segmentation" class="project-link"
-						target="_blank">
-						View Project
-					</a>
-				</div>
-			</div>
-			<div class="project-card">
-				<img src="./images/RealEstate.jpg" alt="Predicting House Prices" class="project-img" />
-				<div class="project-content">
-					<h3 class="project-title">Predicting House Prices</h3>
-					<p class="project-description">
-						Built a machine learning model to predict future house prices using data from the Federal
-						Reserve. Combined and processed the datasets, trained a <i>Random Forest model</i>, and
-						evaluated
-						performance through backtesting. Enhanced the model by adding new predictive features.
-					</p>
+			<style>
+				/* Accordion Styling */
+				.projects-accordion {
+					max-width: 800px;
+					margin: 0 auto;
+				}
 
-					<p class="tech-stack">
-						<strong>Tech Stack:</strong> Python, Pandas, Scikit-learn, Random Forest, Machine Learning,
-						Data Processing
-					</p>
+				.project-item {
+					border: 1px solid #e1e4e8;
+					border-radius: 8px;
+					margin-bottom: 15px;
+					overflow: hidden;
+					transition: all 0.3s;
+				}
 
-					<a href="https://github.com/Dibongaz/Predicting_House_Prices/tree/main" class="project-link"
-						target="_blank">
-						View Project
-					</a>
-				</div>
-			</div>
+				.project-item[open] {
+					box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+					border-color: #4CAF50;
+				}
 
-			<div class="project-card">
-				<img src="./images/sqlDataExploration.jpg" alt="Walmart Sales Data Analysis" class="project-img" />
-				<div class="project-content">
-					<h3 class="project-title">Walmart Sales Data Analysis</h3>
-					<p class="project-description">
-						Performed a comprehensive SQL data analysis on Walmart sales data to uncover key insights.
-						Identified trends and factors influencing sales across different branches to support
-						business decisions.
+				.project-summary {
+					padding: 15px 20px;
+					background-color: #f6f8fa;
+					cursor: pointer;
+					font-size: 18px;
+					list-style: none;
+					display: flex;
+					align-items: center;
+				}
 
-					<p class="tech-stack">
-						<strong>Tech Stack:</strong> SQL, Pandas, Data Analysis, Data Visualization
-					</p>
+				.project-summary:hover {
+					background-color: #eaeef2;
+				}
 
-					</p>
-					<a href="https://github.com/Dibongaz/WalmartSalesDataAnalysis/tree/main" class="project-link"
-						target="_blank">
-						View Project
-					</a>
-				</div>
-			</div>
+				.project-summary::-webkit-details-marker {
+					display: none;
+				}
 
-			<div class="project-card">
-				<img src="./images/FootballMatch.jpg" alt="Football Match Winner Prediction" class="project-img" />
-				<div class="project-content">
-					<h3 class="project-title">EPL Football Match Winner Prediction</h3>
-					<p class="project-description">
-						Developed a machine learning model to predict match winners in the English Premier League
-						(EPL).
-						Collected data using <strong>Requests</strong>, <strong>BeautifulSoup</strong>, and
-						<strong>Pandas</strong>,
-						cleaned and prepared the dataset, and trained a classification model with
-						<strong>Scikit-learn</strong>.
-						Evaluated prediction accuracy and iteratively improved model performance.
-					</p>
+				.project-summary:after {
+					content: "+";
+					margin-left: auto;
+					font-size: 20px;
+					color: #4CAF50;
+				}
 
-					<p class="tech-stack">
-						<strong>Tech Stack:</strong> Python, Requests, BeautifulSoup, Pandas, Scikit-learn
-					</p>
+				.project-item[open] .project-summary:after {
+					content: "-";
+				}
 
-					<a href="https://github.com/Dibongaz/Football_Match_Winner_Prediction" class="project-link"
-						target="_blank">
-						View Project
-					</a>
-				</div>
-			</div>
+				.project-content {
+					padding: 20px;
+					border-top: 1px solid #e1e4e8;
+				}
 
-			<div class="project-card">
-				<img src="./images/NBA.png" alt="Basketball Match Winner Prediction" class="project-img" />
-				<div class="project-content">
-					<h3 class="project-title">NBA Basketball Match Winner Prediction</h3>
-					<p class="project-description">
-						Built a machine learning model to predict NBA basketball match winners.
-						Scraped standings and box score data using <strong>BeautifulSoup</strong> and
-						<strong>Pandas</strong>,
-						cleaned and parsed the data into structured DataFrames, and performed feature selection to
-						identify key predictors.
-						Trained and evaluated a classification model with <strong>Scikit-learn</strong>,
-						incorporating rolling predictors to enhance model performance.
-					</p>
+				.project-img {
+					max-width: 100%;
+					height: auto;
+					border-radius: 4px;
+					margin-bottom: 15px;
+					border: 1px solid #eee;
+				}
 
-					<p class="tech-stack">
-						<strong>Tech Stack:</strong> Python, BeautifulSoup, Pandas, Scikit-learn
-					</p>
+				.project-link {
+					display: inline-block;
+					margin-top: 10px;
+					padding: 8px 15px;
+					background-color: #4CAF50;
+					color: white;
+					border-radius: 4px;
+					text-decoration: none;
+					transition: background-color 0.3s;
+				}
 
-					<a href="https://github.com/Dibongaz/Predict_NBA_Games" class="project-link" target="_blank">
-						View Project
-					</a>
-				</div>
+				.project-link:hover {
+					background-color: #3e8e41;
+				}
 
-
-			</div>
+				.tech-stack {
+					font-style: italic;
+					color: #555;
+					margin: 10px 0;
+				}
+			</style>
 
 			<br><br><br><br>
 
 			<div class="back-to-top">
 				<a href="#top">⬆️ Back to Top</a>
 			</div>
-
 		</section>
 
 		<section id="background">
@@ -375,93 +621,216 @@
 			<p class="section__text__p1">Explore My</p>
 			<h1 class="title">Experience</h1>
 
-			<div class="experience-wrapper">
+			<div class="experience-accordion">
+				<!-- M&A and Finance Project Manager -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">M&A and Finance Project Manager</span>
+						<span class="experience-company"> Urang Group | May 2025 – Current</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Acquisition research and sourcing.</li>
+							<li>Deal structuring and negotiations.</li>
+							<li>Post-acquisition integration and progress tracking.</li>
+							<li>Finance project management and marketing strategy development.</li>
+						</ul>
+					</div>
+				</details>
 
-				<!-- Chief Investment Officer Experience -->
-				<div class="experience-card">
-					<h2>Chief Investment Officer</h2>
-					<h3>Pilanehurst Asset Managers | Sandton | Jan 2020 – Aug 2024</h3>
-					<ul>
-						<li>Developed advanced machine learning models in Python for asset return forecasting, risk
-							assessment, and portfolio optimization.</li>
-						<li>Designed and implemented automated data pipelines using SQL and Python to integrate and
-							process financial and ESG datasets.</li>
-						<li>Led AI and data science initiatives that advanced investment research and optimized asset
-							management strategies.</li>
-					</ul>
-				</div>
+				<!-- Chief Investment Officer -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">Chief Investment Officer</span>
+						<span class="experience-company">Pilanehurst Asset Managers | Jan 2020 – Aug 2024</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Developed advanced machine learning models in Python for asset return forecasting, risk
+								assessment, and portfolio optimization.</li>
+							<li>Designed and implemented automated data pipelines using SQL and Python to integrate and
+								process financial and ESG datasets.</li>
+							<li>Led AI and data science initiatives that advanced investment research and optimized
+								asset
+								management strategies.</li>
+						</ul>
+					</div>
+				</details>
 
-				<!-- Portfolio Manager Experience at Umthombo Wealth -->
-				<div class="experience-card">
-					<h2>Portfolio Manager</h2>
-					<h3>Umthombo Wealth | Sandton | Apr 2017 – Aug 2019</h3>
-					<ul>
-						<li>Built predictive analytics models to assess company performance and identify potential
-							investment risks.</li>
-						<li>Developed interactive dashboards and risk monitoring tools using Python and Excel VBA to
-							provide real-time insights.</li>
-						<li>Conducted advanced statistical analyses on JSE-listed companies, leveraging data science
-							methods to inform data-driven investment decisions.</li>
-					</ul>
-				</div>
+				<!-- Portfolio Manager - Umthombo Wealth -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">Portfolio Manager</span>
+						<span class="experience-company">Umthombo Wealth | Apr 2017 – Aug 2019</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Built predictive analytics models to assess company performance and identify potential
+								investment risks.</li>
+							<li>Developed interactive dashboards and risk monitoring tools using Python and Excel VBA to
+								provide real-time insights.</li>
+							<li>Conducted advanced statistical analyses on JSE-listed companies, leveraging data science
+								methods to inform data-driven investment decisions.</li>
+						</ul>
+					</div>
+				</details>
 
-				<!-- Portfolio Manager Experience at Cachalia Capital -->
-				<div class="experience-card">
-					<h2>Portfolio Manager</h2>
-					<h3>Cachalia Capital | Sandton | Jan 2015 – Feb 2017</h3>
-					<ul>
-						<li>Created machine learning models for company valuation and market trend forecasting.</li>
-						<li>Automated data collection, cleaning, and modeling workflows using Python and SQL to
-							streamline financial data management.</li>
-						<li>Applied statistical methods and machine learning to optimize portfolio rebalancing
-							strategies and asset allocation decisions.</li>
-					</ul>
-				</div>
+				<!-- Portfolio Manager - Cachalia Capital -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">Portfolio Manager</span>
+						<span class="experience-company">Cachalia Capital | Jan 2015 – Feb 2017</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Created machine learning models for company valuation and market trend forecasting.</li>
+							<li>Automated data collection, cleaning, and modeling workflows using Python and SQL to
+								streamline financial data management.</li>
+							<li>Applied statistical methods and machine learning to optimize portfolio rebalancing
+								strategies and asset allocation decisions.</li>
+						</ul>
+					</div>
+				</details>
 
-				<!-- Senior Analyst and Portfolio Manager Experience -->
-				<div class="experience-card">
-					<h2>Senior Analyst and Portfolio Manager</h2>
-					<h3>Mvunonala Asset Managers | Rosebank | Mar 2013 – Dec 2014</h3>
-					<ul>
-						<li>Employed machine learning algorithms for sector analysis and portfolio performance
-							forecasting.</li>
-						<li>Built and maintained predictive models to anticipate market movements and analyze
-							sector-specific trends.</li>
-					</ul>
-				</div>
+				<!-- Senior Analyst - Mvunonala -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">Senior Analyst and Portfolio Manager</span>
+						<span class="experience-company">Mvunonala Asset Managers | Mar 2013 – Dec 2014</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Employed machine learning algorithms for sector analysis and portfolio performance
+								forecasting.</li>
+							<li>Built and maintained predictive models to anticipate market movements and analyze
+								sector-specific trends.</li>
+						</ul>
+					</div>
+				</details>
 
-				<!-- Quantitative Analyst Experience at Public Investment Corporation -->
-				<div class="experience-card">
-					<h2>Quantitative Analyst</h2>
-					<h3>Public Investment Corporation | Pretoria | Oct 2006 – Feb 2013</h3>
-					<ul>
-						<li>Developed multifactor predictive models for equity and fixed income portfolios using VBA,
-							MATLAB, and C++.</li>
-						<li>Managed large SQL databases and designed ETL pipelines to automate the ingestion and
-							processing of financial market data.</li>
-						<li>Created machine learning algorithms for stock clustering and financial regime detection to
-							identify market patterns.</li>
-					</ul>
-				</div>
+				<!-- Quantitative Analyst - PIC -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">Quantitative Analyst</span>
+						<span class="experience-company">Public Investment Corporation | Oct 2006 – Feb 2013</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Developed multifactor predictive models for equity and fixed income portfolios using
+								VBA,
+								MATLAB, and C++.</li>
+							<li>Managed large SQL databases and designed ETL pipelines to automate the ingestion and
+								processing of financial market data.</li>
+							<li>Created machine learning algorithms for stock clustering and financial regime detection
+								to
+								identify market patterns.</li>
+						</ul>
+					</div>
+				</details>
 
-				<!-- Quantitative Analyst Intern Experience at Futuregrowth Asset Management -->
-				<div class="experience-card">
-					<h2>Quantitative Analyst Intern</h2>
-					<h3>Futuregrowth Asset Management | Cape Town | Dec 2005 – Sep 2006</h3>
-					<ul>
-						<li>Built machine learning models using clustering algorithms in MATLAB for market state
-							detection.</li>
-						<li>Developed and maintained statistical modeling tools and automated research databases to
-							support data-driven market analysis.</li>
-					</ul>
-				</div>
-
+				<!-- Quantitative Analyst Intern -->
+				<details class="experience-item">
+					<summary class="experience-summary">
+						<span class="experience-title">Quantitative Analyst Intern</span>
+						<span class="experience-company">Futuregrowth Asset Management | Dec 2005 – Sep 2006</span>
+					</summary>
+					<div class="experience-content">
+						<ul>
+							<li>Built machine learning models using clustering algorithms in MATLAB for market state
+								detection.</li>
+							<li>Developed and maintained statistical modeling tools and automated research databases to
+								support data-driven market analysis.</li>
+						</ul>
+					</div>
+				</details>
 			</div>
+
+			<style>
+				/* Accordion Styling */
+				.experience-accordion {
+					max-width: 800px;
+					margin: 0 auto;
+				}
+
+				.experience-item {
+					border-left: 4px solid #4CAF50;
+					background-color: #f8f9fa;
+					border-radius: 4px;
+					margin-bottom: 15px;
+					overflow: hidden;
+					transition: all 0.3s;
+					box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+				}
+
+				.experience-item[open] {
+					box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+					background-color: #fff;
+				}
+
+				.experience-summary {
+					padding: 18px 20px;
+					cursor: pointer;
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+					position: relative;
+					padding-right: 40px;
+				}
+
+				.experience-summary:hover {
+					background-color: #f1f1f1;
+				}
+
+				.experience-summary::-webkit-details-marker {
+					display: none;
+				}
+
+				.experience-summary:after {
+					content: "+";
+					position: absolute;
+					right: 20px;
+					top: 50%;
+					transform: translateY(-50%);
+					font-size: 20px;
+					color: #4CAF50;
+					font-weight: bold;
+				}
+
+				.experience-item[open] .experience-summary:after {
+					content: "-";
+				}
+
+				.experience-title {
+					font-size: 18px;
+					font-weight: bold;
+					color: #333;
+				}
+
+				.experience-company {
+					font-size: 15px;
+					color: #666;
+					margin-top: 5px;
+				}
+
+				.experience-content {
+					padding: 0 20px 20px 20px;
+				}
+
+				.experience-content ul {
+					padding-left: 20px;
+					margin-top: 10px;
+				}
+
+				.experience-content li {
+					margin-bottom: 8px;
+					line-height: 1.5;
+				}
+			</style>
+
 			<br><br><br><br>
 			<div class="back-to-top">
 				<a href="#top">⬆️ Back to Top</a>
 			</div>
-
 		</section>
 
 	</main>

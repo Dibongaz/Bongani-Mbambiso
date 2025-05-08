@@ -15,67 +15,685 @@
 </head>
 
 <body id="top">
-	<header>
-		<nav id="desktop-nav">
-			<div class="logo"></div>
+	<header class="header">
+		<nav id="desktop-nav" class="desktop-nav">
+			<div class="logo-container">
+				<div class="logo">BM</div>
+				<span class="logo-text">Bongani Mbambiso</span>
+			</div>
 			<ul class="nav-links">
-				<li><a href="#about">About</a></li>
-				<li><a href="#education">Qualifications</a></li>
-				<li><a href="#projects">Projects</a></li>
-				<li><a href="#background">My Finance Background</a></li>
-				<li><a href="#experience">Experience</a></li>
-				<li><a href="#contact">Contact Me</a></li>
+				<li><a href="#about" class="nav-link hover-underline"><span>About</span></a></li>
+				<li><a href="#education" class="nav-link hover-underline"><span>Qualifications</span></a></li>
+				<li><a href="#projects" class="nav-link hover-underline"><span>Projects</span></a></li>
+				<li><a href="#background" class="nav-link hover-underline"><span>Finance Background</span></a></li>
+				<li><a href="#experience" class="nav-link hover-underline"><span>Experience</span></a></li>
+				<li><a href="#contact" class="nav-link contact-link"><span>Contact</span></a></li>
 			</ul>
 		</nav>
 
-		<nav id="hamburger-nav">
-			<div class="logo"></div>
-			<div class="hamburger-menu">
-				<div class="menu-links">
-					<ul>
-						<li><a href="#about" onclick="toggleMenu()">About</a></li>
-						<li><a href="#education" onclick="toggleMenu()">Qualifications</a></li>
-						<li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-						<li><a href="#background" onclick="toggleMenu()">My Finance Background</a></li>
-						<li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-						<li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-					</ul>
-				</div>
+		<nav id="hamburger-nav" class="hamburger-nav">
+			<div class="logo-container">
+				<div class="logo">BM</div>
+				<span class="logo-text">Bongani Mbambiso</span>
+			</div>
+			<div class="hamburger-menu" onclick="toggleMenu()">
+				<span class="bar"></span>
+				<span class="bar"></span>
+				<span class="bar"></span>
+			</div>
+			<div class="menu-links">
+				<ul>
+					<li><a href="#about" onclick="toggleMenu()" class="mobile-link">About</a></li>
+					<li><a href="#education" onclick="toggleMenu()" class="mobile-link">Qualifications</a></li>
+					<li><a href="#projects" onclick="toggleMenu()" class="mobile-link">Projects</a></li>
+					<li><a href="#background" onclick="toggleMenu()" class="mobile-link">Finance Background</a></li>
+					<li><a href="#experience" onclick="toggleMenu()" class="mobile-link">Experience</a></li>
+					<li><a href="#contact" onclick="toggleMenu()" class="mobile-link contact-link">Contact</a></li>
+				</ul>
 			</div>
 		</nav>
 	</header>
 
-	<section id="profile">
-		<div class="section__pic-container">
-			<img src="./images/ME.png" alt="Bongani Mbambiso's profile picture" class="about-pic" style="width: 200px;"
-				title="My Profile Pic">
+	<style>
+		/* Header Styles */
+		.header {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background-color: rgba(255, 255, 255, 0.98);
+			box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+			z-index: 1000;
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+		}
+
+		/* Logo Styles */
+		.logo-container {
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+
+		.logo {
+			width: 40px;
+			height: 40px;
+			background-color: #4CAF50;
+			color: white;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		.logo-text {
+			font-weight: 600;
+			color: #333;
+		}
+
+		/* Desktop Navigation */
+		.desktop-nav {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px 5%;
+			max-width: 1400px;
+			margin: 0 auto;
+		}
+
+		.nav-links {
+			display: flex;
+			gap: 30px;
+			list-style: none;
+		}
+
+		.nav-link {
+			color: #333;
+			text-decoration: none;
+			font-weight: 500;
+			position: relative;
+			padding: 5px 0;
+			transition: color 0.3s;
+		}
+
+		.hover-underline::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background-color: #4CAF50;
+			transition: width 0.3s ease;
+		}
+
+		.hover-underline:hover::before {
+			width: 100%;
+		}
+
+		.nav-link:hover {
+			color: #2e7d32;
+		}
+
+		.contact-link {
+			background-color: #4CAF50;
+			color: white !important;
+			padding: 8px 20px;
+			border-radius: 30px;
+			transition: all 0.3s;
+		}
+
+		.contact-link:hover {
+			background-color: #3e8e41;
+			transform: translateY(-2px);
+			box-shadow: 0 4px 8px rgba(76, 175, 80, 0.2);
+		}
+
+		/* Mobile Navigation */
+		.hamburger-nav {
+			display: none;
+			justify-content: space-between;
+			align-items: center;
+			padding: 15px 5%;
+			position: relative;
+		}
+
+		.hamburger-menu {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: 30px;
+			height: 21px;
+			cursor: pointer;
+			z-index: 1001;
+		}
+
+		.bar {
+			height: 3px;
+			width: 100%;
+			background-color: #333;
+			border-radius: 3px;
+			transition: all 0.3s ease;
+		}
+
+		.menu-links {
+			position: fixed;
+			top: 0;
+			right: -100%;
+			width: 80%;
+			height: 100vh;
+			background-color: white;
+			box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+			padding: 100px 30px;
+			transition: right 0.5s ease;
+			z-index: 1000;
+		}
+
+		.menu-links ul {
+			display: flex;
+			flex-direction: column;
+			gap: 30px;
+			list-style: none;
+		}
+
+		.mobile-link {
+			color: #333;
+			text-decoration: none;
+			font-size: 18px;
+			font-weight: 500;
+			transition: color 0.3s;
+			display: block;
+			padding: 10px 0;
+			border-bottom: 1px solid #eee;
+		}
+
+		.mobile-link:hover {
+			color: #4CAF50;
+		}
+
+		/* Active state for mobile menu */
+		.hamburger-nav.active .bar:nth-child(1) {
+			transform: translateY(9px) rotate(45deg);
+		}
+
+		.hamburger-nav.active .bar:nth-child(2) {
+			opacity: 0;
+		}
+
+		.hamburger-nav.active .bar:nth-child(3) {
+			transform: translateY(-9px) rotate(-45deg);
+		}
+
+		.hamburger-nav.active .menu-links {
+			right: 0;
+		}
+
+		/* Responsive Design */
+		@media (max-width: 900px) {
+			.desktop-nav {
+				display: none;
+			}
+
+			.hamburger-nav {
+				display: flex;
+			}
+		}
+	</style>
+
+	<script>
+		function toggleMenu() {
+			const hamburgerNav = document.getElementById('hamburger-nav');
+			hamburgerNav.classList.toggle('active');
+		}
+	</script>
+
+
+	<section id="profile" class="profile-section">
+		<br><br><br>
+		<div class="profile-container">
+			<!-- Animated profile picture container -->
+			<div class="profile-pic-container">
+				<img src="./images/ME.png" alt="Bongani Mbambiso profile picture" class="profile-pic">
+				<div class="tech-icons">
+					<span class="icon">🤖</span>
+					<span class="icon">📊</span>
+					<span class="icon">💹</span>
+					<span class="icon">🧠</span>
+				</div>
+			</div>
+
+			<!-- Profile text with animated elements -->
+			<div class="profile-content">
+				<div class="greeting">
+					<span class="wave">👋</span>
+					<h1 class="title">Hi, I'm <span class="name-highlight">Bongani Mbambiso</span></h1>
+				</div>
+
+				<div class="roles-container">
+					<h2 class="roles">
+						<span class="role">AI Engineer</span>
+						<span class="separator">|</span>
+						<span class="role">Data Scientist</span>
+						<span class="separator">|</span>
+						<span class="role">M&A Specialist</span>
+						<span class="separator">|</span>
+						<span class="role">Fund Manager</span>
+					</h2>
+				</div>
+
+				<div class="profile-buttons">
+					<a href="#contact" class="btn primary-btn">Contact Me</a>
+					<a href="#projects" class="btn secondary-btn">View Projects</a>
+				</div>
+			</div>
 		</div>
 
-		<div class="section__text">
-			<h3>Hi, I'm Bongani Mbambiso</h3>
-			<h2>AI Engineer | Data Scientist | Mergers & Acquisitions | Fund Manager </h2>
-		</div>
+		<style>
+			/* Modern Profile Section */
+			.profile-section {
+				background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+				padding: 60px 20px;
+				text-align: center;
+			}
+
+			.profile-container {
+				max-width: 1000px;
+				margin: 0 auto;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				gap: 40px;
+			}
+
+			/* Profile Picture with Animation */
+			.profile-pic-container {
+				position: relative;
+				width: 200px;
+				height: 200px;
+			}
+
+			.profile-pic {
+				width: 100%;
+				height: 100%;
+				border-radius: 50%;
+				object-fit: cover;
+				border: 4px solid #4CAF50;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+				transition: transform 0.3s;
+			}
+
+			.profile-pic:hover {
+				transform: scale(1.05);
+			}
+
+			.tech-icons {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				animation: rotateIcons 20s linear infinite;
+			}
+
+			.tech-icons .icon {
+				position: absolute;
+				font-size: 24px;
+				opacity: 0.8;
+			}
+
+			.tech-icons .icon:nth-child(1) {
+				top: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.tech-icons .icon:nth-child(2) {
+				top: 50%;
+				right: -10px;
+				transform: translateY(-50%);
+			}
+
+			.tech-icons .icon:nth-child(3) {
+				bottom: -10px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.tech-icons .icon:nth-child(4) {
+				top: 50%;
+				left: -10px;
+				transform: translateY(-50%);
+			}
+
+			@keyframes rotateIcons {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			/* Profile Content */
+			.profile-content {
+				max-width: 800px;
+			}
+
+			.greeting {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 15px;
+				margin-bottom: 20px;
+			}
+
+			.wave {
+				font-size: 32px;
+				animation: wave 2s infinite;
+			}
+
+			@keyframes wave {
+
+				0%,
+				100% {
+					transform: rotate(0deg);
+				}
+
+				25% {
+					transform: rotate(-20deg);
+				}
+
+				75% {
+					transform: rotate(20deg);
+				}
+			}
+
+			.title {
+				font-size: 2.5rem;
+				margin: 0;
+				color: #333;
+			}
+
+			.name-highlight {
+				color: #2e7d32;
+				position: relative;
+			}
+
+			.name-highlight::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 100%;
+				height: 3px;
+				background-color: #4CAF50;
+				transform: scaleX(0);
+				transform-origin: right;
+				transition: transform 0.3s ease;
+			}
+
+			.name-highlight:hover::after {
+				transform: scaleX(1);
+				transform-origin: left;
+			}
+
+			/* Roles Animation */
+			.roles-container {
+				margin: 25px 0;
+				overflow: hidden;
+			}
+
+			.roles {
+				display: inline-flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 10px;
+				font-size: 1.5rem;
+				color: #555;
+			}
+
+			.role {
+				position: relative;
+				padding: 0 10px;
+			}
+
+			.role::after {
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				width: 0;
+				height: 2px;
+				background-color: #4CAF50;
+				transition: width 0.3s ease;
+			}
+
+			.role:hover::after {
+				width: 100%;
+			}
+
+			.separator {
+				color: #ccc;
+			}
+
+			/* Buttons */
+			.profile-buttons {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+				margin-top: 30px;
+				flex-wrap: wrap;
+			}
+
+			.btn {
+				padding: 12px 25px;
+				border-radius: 30px;
+				font-weight: 600;
+				text-decoration: none;
+				transition: all 0.3s;
+			}
+
+			.primary-btn {
+				background-color: #4CAF50;
+				color: white;
+				border: 2px solid #4CAF50;
+			}
+
+			.primary-btn:hover {
+				background-color: #3e8e41;
+				transform: translateY(-3px);
+				box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+			}
+
+			.secondary-btn {
+				background-color: transparent;
+				color: #4CAF50;
+				border: 2px solid #4CAF50;
+			}
+
+			.secondary-btn:hover {
+				background-color: rgba(76, 175, 80, 0.1);
+				transform: translateY(-3px);
+			}
+
+			/* Responsive Design */
+			@media (max-width: 768px) {
+				.title {
+					font-size: 2rem;
+				}
+
+				.roles {
+					font-size: 1.2rem;
+					flex-direction: column;
+					align-items: center;
+				}
+
+				.separator {
+					display: none;
+				}
+			}
+		</style>
 	</section>
 
 
 	<main>
 
-		<section id="about">
-			<h2 class="section-title">
-				<img src="images/ME.png" alt="Profile Image" class="icon" /> About Me
-			</h2>
-			<p>
-				I am an AI Engineer and Data Scientist with a deep passion for building intelligent systems that solve
-				real-world problems.
-				Additionally to a two decade career in Fund Management, my expertise lies at the intersection of machine
-				learning, data science, and finance, where I design and
-				deploy AI-driven solutions to enhance decision-making, automate processes, and unlock hidden insights.
-				I am particularly focused on developing predictive models, natural language processing applications, and
-				AI-powered financial analytics.
-				With a strong foundation in quantitative analysis and a continuous drive to innovate, I aim to bridge
-				the gap between complex data and actionable intelligence.
-			</p>
+		<section id="about" class="about-section">
+			<div class="about-container">
+				<div class="about-header">
+					<img src="images/ME.png" alt="Profile Image" class="about-icon" />
+					<h2 class="section-title">About Me</h2>
+				</div>
 
+				<div class="about-content">
+					<p class="about-intro">
+						<span class="highlight">AI Engineer and Data Scientist</span> with a two-decade foundation in
+						Fund Management, specializing in <span class="highlight">intelligent systems for real-world
+							problem-solving</span>.
+					</p>
+
+					<div class="about-details">
+						<div class="about-column">
+							<div class="about-card">
+								<span class="emoji-icon">🤖</span>
+								<h3>Machine Learning</h3>
+								<p>Designing predictive models and NLP applications to transform data into strategic
+									assets</p>
+							</div>
+						</div>
+
+						<div class="about-column">
+							<div class="about-card">
+								<span class="emoji-icon">📊</span>
+								<h3>Financial Analytics</h3>
+								<p>Bridging quantitative analysis with AI to enhance investment decision-making</p>
+							</div>
+						</div>
+
+						<div class="about-column">
+							<div class="about-card">
+								<span class="emoji-icon">⚡</span>
+								<h3>Automation</h3>
+								<p>Developing systems that streamline processes and unlock hidden insights at scale</p>
+							</div>
+						</div>
+					</div>
+
+					<p class="about-closing">
+						My mission: <span class="highlight">Transform complex data into actionable intelligence</span>
+						through innovative AI solutions.
+					</p>
+				</div>
+			</div>
+
+			<style>
+				/* Modern About Section Styling */
+				.about-section {
+					background-color: #f8f9fa;
+					padding: 40px 0;
+					border-radius: 12px;
+					margin: 30px auto;
+					max-width: 1000px;
+					box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+				}
+
+				.about-container {
+					padding: 0 30px;
+				}
+
+				.about-header {
+					display: flex;
+					align-items: center;
+					gap: 20px;
+					margin-bottom: 30px;
+					border-bottom: 2px solid #4CAF50;
+					padding-bottom: 15px;
+				}
+
+				.about-icon {
+					width: 80px;
+					height: 80px;
+					border-radius: 50%;
+					object-fit: cover;
+					border: 3px solid #4CAF50;
+					box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+				}
+
+				.about-intro,
+				.about-closing {
+					font-size: 18px;
+					line-height: 1.7;
+					color: #333;
+					margin: 25px 0;
+					text-align: center;
+				}
+
+				.highlight {
+					color: #2e7d32;
+					font-weight: 600;
+					background-color: rgba(76, 175, 80, 0.15);
+					padding: 2px 6px;
+					border-radius: 4px;
+				}
+
+				.about-details {
+					display: flex;
+					gap: 20px;
+					margin: 40px 0;
+					flex-wrap: wrap;
+					justify-content: center;
+				}
+
+				.about-column {
+					flex: 1;
+					min-width: 250px;
+				}
+
+				.about-card {
+					background: white;
+					padding: 25px;
+					border-radius: 8px;
+					height: 100%;
+					box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+					transition: transform 0.3s, box-shadow 0.3s;
+					border-top: 3px solid #4CAF50;
+				}
+
+				.about-card:hover {
+					transform: translateY(-5px);
+					box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+				}
+
+				.emoji-icon {
+					font-size: 28px;
+					margin-bottom: 10px;
+					display: inline-block;
+				}
+
+				.about-card h3 {
+					color: #2e7d32;
+					margin: 10px 0;
+					font-size: 20px;
+				}
+
+				.about-card p {
+					color: #555;
+					line-height: 1.5;
+				}
+
+				@media (max-width: 768px) {
+					.about-header {
+						flex-direction: column;
+						text-align: center;
+					}
+
+					.about-details {
+						flex-direction: column;
+					}
+				}
+			</style>
 		</section>
 
 		<section id="education">
@@ -597,24 +1215,264 @@
 			</div>
 		</section>
 
-		<section id="background">
-			<h2>Finance Meets AI: My Background</h2>
-			<p>I bring nearly two decades of experience in investment management, asset allocation, and
-				portfolio optimization — and now I combine that expertise with machine learning and AI to solve complex
-				business problems.</p>
-			<p>As Chief Investment Officer at Pilanehurst Asset Managers, I led research teams, developed ESG data
-				models, and introduced AI tools to improve decision-making. My earlier roles included managing large
-				equity portfolios, building quantitative valuation models, and conducting global macroeconomic and
-				commodity research.</p>
-			<p>Today, I apply that deep domain knowledge to AI and Data Science — developing predictive models,
-				segmentation tools, and deploying intelligent data systems across industries.</p>
+		<section id="background" class="background-section">
+			<div class="background-container">
+				<h2 class="section-title">
+					<span class="icon">💰</span>
+					<span class="icon">🤖</span>
+					Finance Meets AI: My Unique Background
+				</h2>
+
+				<div class="timeline">
+					<!-- Finance Experience -->
+					<div class="timeline-item finance-item">
+						<div class="timeline-content">
+							<h3>Two Decades in Finance</h3>
+							<ul class="experience-list">
+								<li>Chief Investment Officer at Pilanehurst Asset Managers</li>
+								<li>Portfolio management & asset allocation specialist</li>
+								<li>Quantitative valuation model developer</li>
+								<li>Global macroeconomic researcher</li>
+							</ul>
+						</div>
+						<div class="timeline-icon">💰</div>
+					</div>
+
+					<!-- Transition -->
+					<div class="timeline-item transition-item">
+						<div class="timeline-content">
+							<h3>The AI Transformation</h3>
+							<p>Bridged finance expertise with machine learning to develop innovative solutions at the
+								intersection of both fields.</p>
+						</div>
+						<div class="timeline-icon">🔄</div>
+					</div>
+
+					<!-- AI Experience -->
+					<div class="timeline-item ai-item">
+						<div class="timeline-content">
+							<h3>AI Engineering Today</h3>
+							<ul class="experience-list">
+								<li>Develop predictive financial models</li>
+								<li>Build intelligent data systems</li>
+								<li>Create AI-powered segmentation tools</li>
+								<li>Deploy ML solutions across industries</li>
+							</ul>
+						</div>
+						<div class="timeline-icon">🤖</div>
+					</div>
+				</div>
+
+				<div class="value-proposition">
+					<h3>Why This Matters:</h3>
+					<p>My unique combination of deep financial domain knowledge and cutting-edge AI expertise allows me
+						to:</p>
+					<div class="value-cards">
+						<div class="value-card">
+							<span class="value-icon">🔍</span>
+							<p>Identify the right problems to solve with AI</p>
+						</div>
+						<div class="value-card">
+							<span class="value-icon">⚡</span>
+							<p>Develop practical, business-relevant solutions</p>
+						</div>
+						<div class="value-card">
+							<span class="value-icon">🌉</span>
+							<p>Bridge the gap between technical teams and business stakeholders</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<style>
+				/* Section Styling */
+				.background-section {
+					background-color: #f8f9fa;
+					padding: 60px 20px;
+					position: relative;
+				}
+
+				.background-container {
+					max-width: 1000px;
+					margin: 0 auto;
+				}
+
+				.section-title {
+					text-align: center;
+					font-size: 2.2rem;
+					margin-bottom: 50px;
+					color: #2e7d32;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					gap: 15px;
+				}
+
+				.section-title .icon {
+					font-size: 1.8rem;
+				}
+
+				/* Timeline Styling */
+				.timeline {
+					position: relative;
+					max-width: 800px;
+					margin: 0 auto 50px;
+					padding-left: 50px;
+				}
+
+				.timeline:before {
+					content: '';
+					position: absolute;
+					left: 50px;
+					top: 0;
+					bottom: 0;
+					width: 4px;
+					background: linear-gradient(to bottom, #4CAF50, #2196F3);
+					transform: translateX(-50%);
+				}
+
+				.timeline-item {
+					position: relative;
+					margin-bottom: 40px;
+					display: flex;
+					align-items: flex-start;
+				}
+
+				.timeline-icon {
+					width: 50px;
+					height: 50px;
+					background: white;
+					border-radius: 50%;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 24px;
+					box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+					position: absolute;
+					left: -25px;
+					z-index: 2;
+				}
+
+				.timeline-content {
+					background: white;
+					padding: 25px;
+					border-radius: 8px;
+					box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+					margin-left: 40px;
+					flex: 1;
+					position: relative;
+				}
+
+				.timeline-content h3 {
+					margin-top: 0;
+					color: #2e7d32;
+					font-size: 1.4rem;
+				}
+
+				.finance-item .timeline-content {
+					border-left: 4px solid #4CAF50;
+				}
+
+				.ai-item .timeline-content {
+					border-left: 4px solid #2196F3;
+				}
+
+				.transition-item .timeline-content {
+					border-left: 4px solid #9C27B0;
+				}
+
+				.experience-list {
+					padding-left: 20px;
+				}
+
+				.experience-list li {
+					margin-bottom: 10px;
+					line-height: 1.5;
+				}
+
+				/* Value Proposition */
+				.value-proposition {
+					background: white;
+					padding: 30px;
+					border-radius: 8px;
+					box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+					max-width: 800px;
+					margin: 0 auto;
+				}
+
+				.value-proposition h3 {
+					color: #333;
+					text-align: center;
+					font-size: 1.5rem;
+					margin-bottom: 20px;
+				}
+
+				.value-proposition p {
+					text-align: center;
+					margin-bottom: 30px;
+					font-size: 1.1rem;
+				}
+
+				.value-cards {
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					gap: 20px;
+				}
+
+				.value-card {
+					flex: 1;
+					min-width: 250px;
+					background: #f8f9fa;
+					padding: 25px;
+					border-radius: 8px;
+					text-align: center;
+					transition: transform 0.3s;
+				}
+
+				.value-card:hover {
+					transform: translateY(-5px);
+				}
+
+				.value-icon {
+					font-size: 2rem;
+					display: block;
+					margin-bottom: 15px;
+				}
+
+				/* Responsive Design */
+				@media (max-width: 768px) {
+					.timeline {
+						padding-left: 30px;
+					}
+
+					.timeline:before {
+						left: 30px;
+					}
+
+					.timeline-icon {
+						left: -15px;
+						width: 40px;
+						height: 40px;
+						font-size: 20px;
+					}
+
+					.timeline-content {
+						margin-left: 30px;
+					}
+
+					.section-title {
+						flex-direction: column;
+						gap: 10px;
+					}
+				}
+			</style>
 
 			<br><br><br>
 
 			<div class="back-to-top">
 				<a href="#top">⬆️ Back to Top</a>
 			</div>
-
 		</section>
 
 		<section id="experience">
@@ -835,68 +1693,335 @@
 
 	</main>
 
+
 	<footer>
 		<section id="contact">
-			<div class="contact-details">
-				<!-- WhatsApp -->
-				<p>
-					<a href="https://wa.me/+27624297380" target="_blank">
-						<img src="images/whatsapp_icon.png" class="contact-icon" alt="WhatsApp">
-						Contact via WhatsApp
-					</a>
-				</p>
+			<div class="contact-container">
+				<div class="contact-cards">
+					<!-- WhatsApp -->
+					<div class="contact-card">
+						<a href="https://wa.me/+27624297380" target="_blank" class="contact-item">
+							<div class="icon-wrapper hexagon">
+								<img src="images/whatsapp_icon.png" class="contact-icon" alt="WhatsApp">
+							</div>
+							<span>WhatsApp</span>
+						</a>
+					</div>
 
-				<!-- Email -->
-				<p>
-					<a href="mailto:mbambisob@gmail.com">
-						<img src="images/email.jpg" class="contact-icon" alt="Email">
-						Contact via e-mail
-					</a>
-				</p>
+					<!-- Email -->
+					<div class="contact-card">
+						<a href="mailto:mbambisob@gmail.com" class="contact-item">
+							<div class="icon-wrapper diamond">
+								<img src="images/email.jpg" class="contact-icon" alt="Email">
+							</div>
+							<span>Email</span>
+						</a>
+					</div>
 
-				<!-- Phone (hidden number) -->
-				<p style="display: none;">
-					<a href="tel:+27624297380">
-						<img src="images/cellphone.jpg" class="contact-icon" alt="Phone">
-						Call Me
-					</a>
-				</p>
+					<!-- LinkedIn -->
+					<div class="contact-card">
+						<a href="https://www.linkedin.com/in/bongani-mbambiso-6738428/" target="_blank"
+							class="contact-item">
+							<div class="icon-wrapper rounded-square">
+								<img src="images/linkedin.jpg" class="contact-icon" alt="LinkedIn">
+							</div>
+							<span>LinkedIn</span>
+						</a>
+					</div>
 
-				<!-- LinkedIn -->
-				<p>
-					<a href="https://www.linkedin.com/in/bongani-mbambiso-6738428/" target="_blank">
-						<img src="images/linkedin.jpg" class="contact-icon" alt="LinkedIn">
-						LinkedIn
-					</a>
-				</p>
+					<!-- GitHub -->
+					<div class="contact-card">
+						<a href="https://github.com/Dibongaz" target="_blank" class="contact-item">
+							<div class="icon-wrapper circle">
+								<img src="images/github.jpg" class="contact-icon" alt="GitHub">
+							</div>
+							<span>GitHub</span>
+						</a>
+					</div>
 
-				<!-- GitHub -->
-				<p>
-					<a href="https://github.com/Dibongaz" target="_blank">
-						<img src="images/github.jpg" class="contact-icon" alt="GitHub">
-						GitHub
-					</a>
-				</p>
+					<!-- 365 Profile Link -->
+					<div class="contact-card">
+						<a href="https://learn.365datascience.com/profile/bongani-patrick-mbambiso/" target="_blank"
+							class="contact-item">
+							<div class="icon-wrapper pentagon">
+								<img src="images/365datascience.png" class="contact-icon" alt="365 DataScience">
+							</div>
+							<span>365 DataScience</span>
+						</a>
+					</div>
+				</div>
 
-				<!-- 365 Profile Link -->
-				<p>
-					<a href="https://learn.365datascience.com/profile/bongani-patrick-mbambiso/" target="_blank">
-						<img src="images/365datascience.png" class="contact-icon" alt="GitHub">
-						365 DataScience </a>
-				</p>
-
+				<div class="back-to-top">
+					<a href="#top" class="back-to-top-btn">⬆️ Back to Top</a>
+				</div>
 			</div>
-			<br><br><br><br>
-			<!-- Back to Top link -->
-			<div class="back-to-top">
-				<a href="#top">⬆️ Back to Top</a>
-			</div>
-
 		</section>
 
-		<p>Copyright &#169; 2024 Bongani Mbambiso. All Rights Reserved.</p>
+		<style>
+			/* Base styles - colors preserved */
+			.contact-container {
+				max-width: 800px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+
+			.contact-cards {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				gap: 30px;
+				margin-bottom: 40px;
+			}
+
+			.contact-card {
+				width: 100px;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
+			}
+
+			.icon-wrapper {
+				width: 70px;
+				height: 70px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-bottom: 12px;
+				background: rgba(255, 255, 255, 0.1);
+				/* Original transparent background */
+				transition: transform 0.3s ease;
+			}
+
+			.contact-icon {
+				width: 30px;
+				height: 30px;
+				object-fit: contain;
+			}
+
+			.contact-card span {
+				font-size: 0.9rem;
+				color: inherit;
+				/* Original text color preserved */
+			}
+
+			/* Beautiful Icon Container Shapes */
+			.hexagon {
+				clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+			}
+
+			.diamond {
+				clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+			}
+
+			.rounded-square {
+				clip-path: inset(10% round 25%);
+			}
+
+			.circle {
+				border-radius: 50%;
+			}
+
+			.pentagon {
+				clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+			}
+
+			/* Hover effects */
+			.icon-wrapper:hover {
+				transform: scale(1.1) rotate(5deg);
+			}
+
+			.back-to-top {
+				margin-top: 30px;
+			}
+
+			.back-to-top-btn {
+				display: inline-block;
+				padding: 8px 20px;
+				border-radius: 20px;
+				text-decoration: none;
+				background: rgba(255, 255, 255, 0.1);
+				/* Original button style */
+				color: inherit;
+				/* Original text color */
+				transition: all 0.3s ease;
+			}
+
+			.back-to-top-btn:hover {
+				background: rgba(255, 255, 255, 0.2);
+				/* Original hover style */
+			}
+
+			@media (max-width: 600px) {
+				.contact-cards {
+					gap: 20px;
+				}
+
+				.contact-card {
+					width: 80px;
+				}
+
+				.icon-wrapper {
+					width: 60px;
+					height: 60px;
+				}
+			}
+		</style>
+
+		<div class="copyright-container">
+			<div class="copyright-line">
+				<span class="copyright-symbol">©</span>
+				<span class="copyright-year">2024</span>
+				<span class="copyright-name">Bongani Mbambiso</span>
+				<span class="copyright-rights">All Rights Reserved</span>
+			</div>
+		</div>
+
+		<style>
+			.copyright-container {
+				margin-top: 30px;
+				padding-top: 20px;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+			}
+
+			.copyright-line {
+				font-size: 0.9rem;
+				color: #aaaaaa;
+				/* Light gray - matches your original tone */
+				letter-spacing: 0.5px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 8px;
+				flex-wrap: wrap;
+			}
+
+			.copyright-symbol {
+				font-size: 1.1rem;
+				margin-right: 2px;
+			}
+
+			.copyright-name {
+				font-weight: 500;
+				color: #cccccc;
+				/* Slightly brighter for name */
+			}
+
+			@media (max-width: 480px) {
+				.copyright-line {
+					flex-direction: column;
+					gap: 4px;
+				}
+			}
+		</style>
+
+		<script>
+			// Auto-update year
+			document.querySelector('.copyright-year').textContent = new Date().getFullYear();
+		</script>
+
 
 	</footer>
+
+	<style>
+		/* Footer styling - original colors preserved */
+		footer {
+			background-color: inherit;
+			/* Keeps original background */
+			color: inherit;
+			/* Keeps original text color */
+			font-family: inherit;
+			/* Keeps original font */
+			padding: 40px 20px 20px;
+			text-align: center;
+		}
+
+		.contact-container {
+			max-width: 800px;
+			margin: 0 auto;
+		}
+
+		.contact-cards {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 20px;
+			margin-bottom: 40px;
+		}
+
+		.contact-card {
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 12px;
+			padding: 15px;
+			width: 140px;
+			transition: transform 0.3s ease;
+		}
+
+		.contact-card:hover {
+			transform: translateY(-5px);
+		}
+
+		.contact-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-decoration: none;
+			color: inherit;
+			/* Keeps original link color */
+		}
+
+		.icon-wrapper {
+			width: 50px;
+			height: 50px;
+			background: rgba(255, 255, 255, 0.1);
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 10px;
+		}
+
+		.contact-icon {
+			width: 30px;
+			height: 30px;
+			object-fit: contain;
+		}
+
+		.back-to-top {
+			margin: 40px 0 30px;
+		}
+
+		.back-to-top-btn {
+			display: inline-block;
+			padding: 10px 20px;
+			border-radius: 25px;
+			text-decoration: none;
+			color: inherit;
+			background: rgba(255, 255, 255, 0.1);
+			transition: all 0.3s ease;
+		}
+
+		.back-to-top-btn:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+
+		.copyright-container {
+			margin-top: 20px;
+			padding-top: 20px;
+			border-top: 1px solid rgba(255, 255, 255, 0.1);
+		}
+
+		@media (max-width: 600px) {
+			.contact-cards {
+				gap: 15px;
+			}
+
+			.contact-card {
+				width: 120px;
+				padding: 12px;
+			}
+		}
+	</style>
 
 	<script src="script.js"></script>
 </body>

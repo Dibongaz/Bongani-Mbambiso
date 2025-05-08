@@ -1,16 +1,10 @@
-function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    menu.classList.toggle("open");
-    icon.classList.toggle("open");
-}
-
 document.addEventListener('DOMContentLoaded', function() {
     const hamburgerButton = document.getElementById('hamburger-button');
     const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerIcon = document.querySelector('.hamburger-menu'); // Changed from .hamburger-icon
 
     hamburgerButton.addEventListener('click', function() {
-        mobileMenu.classList.toggle('active');
-        hamburgerButton.classList.toggle('active');
+        mobileMenu.classList.toggle('open');
+        hamburgerIcon.classList.toggle('open');
     });
 });

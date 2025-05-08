@@ -2051,6 +2051,29 @@
 	</style>
 
 	<script src="script.js"></script>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const hamburger = document.getElementById("hamburger-button");
+			const nav = document.getElementById("hamburger-nav");
+			const menu = document.getElementById("mobile-menu");
+			const body = document.body;
+
+			hamburger.addEventListener("click", function () {
+				nav.classList.toggle("active");
+				body.classList.toggle("no-scroll");
+			});
+
+			// Optional: Close menu when a mobile link is clicked
+			document.querySelectorAll(".mobile-link").forEach(link => {
+				link.addEventListener("click", () => {
+					nav.classList.remove("active");
+					body.classList.remove("no-scroll");
+				});
+			});
+		});
+	</script>
+
 </body>
 
 </html>
